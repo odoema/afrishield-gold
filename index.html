@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>AfriShield Gold Ltd | Licensed Gold Trading — Uganda & DRC</title>
+  <meta name="description" content="AfriShield Gold Ltd (hypothetical class project) is a licensed gold trading company headquartered in Kampala, Uganda. We source, assay, refine and export responsibly produced gold from Uganda and the DRC with full OECD due diligence, CEEC and ICGLR documentation." />
+  <meta name="theme-color" content="#120e0a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AfriShield Gold Ltd — Responsible Gold from Uganda & the DRC" />
+  <meta property="og:description" content="Licensed, conflict-free, fully documented gold sourcing, refining and export. A hypothetical company created for a business class assignment." />
+  <meta property="og:image" content="https://afrishieldgold.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://afrishieldgold.com/" />
+  <link rel="canonical" href="https://afrishieldgold.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preload" as="image" href="assets/afrishield-shield.webp" type="image/webp" />
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <script>document.documentElement.classList.add('js')</script>
+  <style>
+    /* =========================================================
+       TOKENS
+       ========================================================= */
+    :root {
+      /* AfriShield brand: warm gold, chocolate brown, cream */
+      --gold: #c9a24a;
+      --gold-light: #ecd9a0;
+      --gold-dark: #8a6a2a;
+      --brown: #3b2a1a;
+      --dark: #120e0a;
+      --dark-2: #1b1510;
+      --dark-3: #261d15;
+      --text: #efe7d6;
+      --text-muted: #b5a891;
+      --border: rgba(201, 162, 74, 0.24);
+      --success: #22c55e;
+      --nav-h: 64px;
+      --notice-h: 30px;
+      --radius: 14px;
+      --ease: cubic-bezier(.22, .61, .36, 1);
+    }
+
+    /* =========================================================
+       BASE (mobile first)
+       ========================================================= */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 12px); -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    body.menu-open { overflow: hidden; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; line-height: 1.2; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; }
+    .container { width: min(1140px, calc(100% - 32px)); margin: 0 auto; }
+    .icon-svg { width: 1.25em; height: 1.25em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    :focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; border-radius: 6px; }
+    .skip-link {
+      position: absolute; left: 16px; top: -60px; z-index: 2000;
+      background: var(--gold); color: var(--dark); font-weight: 600;
+      padding: 10px 16px; border-radius: 8px; transition: top .2s;
+    }
+    .skip-link:focus { top: 12px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    /* =========================================================
+       NAV + ACADEMIC NOTICE
+       ========================================================= */
+    .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+    .notice {
+      height: var(--notice-h);
+      display: flex; align-items: center; justify-content: center;
+      background: var(--gold); color: var(--dark);
+      font-size: 0.72rem; font-weight: 600; letter-spacing: .02em; text-align: center;
+      padding: 0 12px; overflow: hidden;
+      transition: height .3s var(--ease), opacity .3s;
+    }
+    .notice { white-space: nowrap; }
+    .n-long { display: none; }
+    .site-header.scrolled .notice { height: 0; opacity: 0; }
+    nav {
+      background: rgba(18, 14, 10, 0.72);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: background .3s, box-shadow .3s;
+    }
+    .site-header.scrolled nav { background: rgba(18, 14, 10, 0.97); box-shadow: 0 4px 30px rgba(0,0,0,0.45); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: var(--nav-h); }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { width: 34px; height: auto; aspect-ratio: 253 / 304; filter: drop-shadow(0 2px 6px rgba(0,0,0,.45)); }
+    .wordmark { display: flex; flex-direction: column; line-height: 1; }
+    .wordmark b { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase; color: var(--text); }
+    .wordmark b .accent { color: var(--gold); }
+    .wordmark small { font-size: .56rem; letter-spacing: .32em; text-transform: uppercase; color: var(--text-muted); margin-top: 4px; }
+    .footer-brand .logo-mark { width: 52px; }
+    .footer-brand .wordmark b { font-size: 1.3rem; }
+    .tagline { color: var(--gold-light) !important; font-family: 'Playfair Display', Georgia, serif; font-size: 1rem !important; font-style: italic; }
+    .logo .accent { color: var(--gold); }
+    .menu-toggle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      color: var(--text); cursor: pointer;
+    }
+    .menu-toggle .i-close { display: none; }
+    .menu-toggle[aria-expanded="true"] .i-close { display: block; }
+    .menu-toggle[aria-expanded="true"] .i-menu { display: none; }
+    .nav-links {
+      display: none; list-style: none;
+      position: absolute; left: 0; right: 0; top: 100%;
+      flex-direction: column; gap: 4px;
+      padding: 14px 16px 22px;
+      background: var(--dark); border-bottom: 1px solid var(--border);
+      max-height: calc(100svh - var(--nav-h)); overflow-y: auto;
+    }
+    .nav-links.active { display: flex; }
+    .nav-links a {
+      display: block; padding: 12px 8px; border-radius: 8px;
+      font-size: 1rem; font-weight: 500; color: var(--text-muted); transition: color .2s, background .2s;
+    }
+    .nav-links a:hover, .nav-links a.is-current { color: var(--gold); }
+    .nav-links .nav-cta {
+      margin-top: 8px; text-align: center;
+      background: var(--gold); color: var(--dark) !important;
+      padding: 13px 20px; border-radius: 10px; font-weight: 600;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* =========================================================
+       HERO SLIDER  (mobile first)
+       ========================================================= */
+    .hero {
+      position: relative;
+      height: 100vh; height: 100svh;
+      min-height: 620px; max-height: 1000px;
+      background: var(--dark);
+      overflow: hidden;
+      touch-action: pan-y;
+      isolation: isolate;
+    }
+    .slides { position: absolute; inset: 0; }
+    .slide {
+      position: absolute; inset: 0;
+      display: flex; align-items: flex-end;
+      opacity: 0; visibility: hidden;
+      transition: opacity .9s var(--ease), visibility 0s linear .9s;
+    }
+    .slide.is-active { opacity: 1; visibility: visible; transition: opacity .9s var(--ease), visibility 0s; z-index: 1; }
+    .slide-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: var(--pos, center);
+      transform: scale(1.12);
+      transition: transform 8s linear;
+      background: var(--dark-3);
+    }
+    .slide.is-active .slide-bg { transform: scale(1); }
+    .slide::after { /* readability overlay — bottom-weighted on phones */
+      content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(0deg, rgba(18,14,10,0.97) 0%, rgba(18,14,10,0.86) 38%, rgba(18,14,10,0.35) 70%, rgba(18,14,10,0.55) 100%);
+    }
+    .slide-content {
+      position: relative; z-index: 2;
+      padding-bottom: 112px; /* room for controls */
+    }
+    .slide-content > * { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+    .slide.is-active .slide-content > * { opacity: 1; transform: none; }
+    .slide.is-active .slide-content > *:nth-child(1) { transition-delay: .25s; }
+    .slide.is-active .slide-content > *:nth-child(2) { transition-delay: .38s; }
+    .slide.is-active .slide-content > *:nth-child(3) { transition-delay: .5s; }
+    .slide.is-active .slide-content > *:nth-child(4) { transition-delay: .62s; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201, 162, 74, 0.16);
+      border: 1px solid var(--border);
+      color: var(--gold-light);
+      font-size: 0.7rem; font-weight: 600;
+      padding: 6px 12px; border-radius: 100px;
+      margin-bottom: 16px; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .badge::before {
+      content: ''; width: 7px; height: 7px;
+      background: var(--success); border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+    .slide-title { font-size: clamp(2rem, 8.4vw, 3.6rem); margin-bottom: 14px; letter-spacing: -0.02em; max-width: 15ch; }
+    .slide-title span { color: var(--gold); }
+    .slide-text { font-size: 1rem; color: rgba(239,231,214,0.88); margin-bottom: 24px; max-width: 540px; }
+    .hero-btns { display: flex; flex-direction: column; gap: 10px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 48px; padding: 13px 24px; border-radius: 10px;
+      font-weight: 600; font-size: 0.95rem;
+      transition: transform .25s, box-shadow .25s, border-color .25s, color .25s, background .25s;
+      cursor: pointer; border: none;
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--dark); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(201,162,74,0.35); }
+    .btn-outline { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.22); color: var(--text); }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* controls */
+    .hero-controls {
+      position: absolute; z-index: 3; left: 0; right: 0; bottom: 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .dots { display: flex; gap: 8px; align-items: center; }
+    .dot {
+      position: relative; width: 28px; height: 28px; padding: 0;
+      background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .dot::before { /* the visible pill */
+      content: ''; width: 10px; height: 4px; border-radius: 4px;
+      background: rgba(255,255,255,0.35); transition: width .35s var(--ease), background .35s;
+    }
+    .dot[aria-selected="true"]::before { width: 26px; background: var(--gold); }
+    .ctrl-group { display: flex; gap: 8px; }
+    .ctrl {
+      width: 44px; height: 44px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: rgba(18,14,10,0.55); border: 1px solid rgba(255,255,255,0.18);
+      color: var(--text); cursor: pointer;
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+      transition: border-color .2s, color .2s, background .2s;
+    }
+    .ctrl:hover { border-color: var(--gold); color: var(--gold); }
+    .ctrl .i-play { display: none; }
+    .ctrl[aria-pressed="true"] .i-play { display: block; }
+    .ctrl[aria-pressed="true"] .i-pause { display: none; }
+    .slide-count { display: none; white-space: nowrap; align-self: center; font-size: .8rem; color: var(--text-muted); font-variant-numeric: tabular-nums; min-width: 3.2em; }
+    .slide-count b { color: var(--text); font-weight: 600; }
+    .hero-progress { position: absolute; z-index: 3; left: 0; right: 0; bottom: 0; height: 3px; background: rgba(255,255,255,0.08); }
+    .hero-progress span { display: block; height: 100%; width: 100%; background: linear-gradient(90deg, var(--gold-dark), var(--gold)); transform-origin: left; transform: scaleX(0); }
+    .hero-progress span.run { animation: progress var(--dur, 6500ms) linear forwards; }
+    .hero.is-paused .hero-progress span.run { animation-play-state: paused; }
+    @keyframes progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    /* =========================================================
+       STATS BAND + LICENCES
+       ========================================================= */
+    .stats-band { background: var(--dark-2); border-bottom: 1px solid var(--border); }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 22px 0; text-align: center; }
+    .stat-value { font-size: 1.35rem; font-weight: 700; color: var(--gold); font-family: 'Playfair Display', serif; line-height: 1.2; }
+    .stat-label { font-size: 0.72rem; color: var(--text-muted); margin-top: 4px; line-height: 1.35; }
+    .licences { background: var(--dark-3); border-bottom: 1px solid var(--border); padding: 28px 0; }
+    .licences-inner { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 16px; text-align: center; }
+    .licence-item strong { display: block; color: var(--gold); font-size: 0.82rem; margin-bottom: 2px; }
+    .licence-item span { font-size: 0.76rem; color: var(--text-muted); }
+
+    /* =========================================================
+       SECTIONS (mobile first)
+       ========================================================= */
+    section.block { padding: 64px 0; }
+    .section-header { text-align: center; max-width: 640px; margin: 0 auto 40px; }
+    .eyebrow { color: var(--gold); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 10px; }
+    .section-header h2 { font-size: clamp(1.65rem, 6vw, 2.4rem); margin-bottom: 14px; }
+    .section-header p { color: var(--text-muted); font-size: 1rem; }
+    .about-grid { display: grid; gap: 36px; }
+    .about-content h3 { font-size: 1.4rem; margin-bottom: 14px; }
+    .about-content p { color: var(--text-muted); margin-bottom: 18px; }
+    .about-list { list-style: none; margin-top: 22px; }
+    .about-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; font-size: 0.94rem; }
+    .about-list li::before { content: '✓'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .about-cards { display: grid; gap: 16px; }
+    .card {
+      background: var(--dark-2); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      transition: border-color .3s, transform .3s;
+    }
+    .card:hover { border-color: var(--gold); }
+    .card-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--dark-3); }
+    .card-body { padding: 20px 22px 22px; }
+    .card-body h3, .card-body h4 { font-size: 1.12rem; margin-bottom: 8px; }
+    .about-cards .card-body h3 { color: var(--gold); font-size: 1.05rem; }
+    .card-body p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px; }
+    .card-body p:last-child { margin-bottom: 0; }
+    .product-meta { font-size: 0.8rem; color: var(--gold); font-weight: 600; }
+    .tag {
+      display: inline-block; font-size: .68rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
+      color: var(--gold-light); background: rgba(201,162,74,.12); border: 1px solid var(--border);
+      padding: 3px 9px; border-radius: 100px; margin-bottom: 10px;
+    }
+    .products { background: var(--dark-2); }
+    .products .card { background: var(--dark); }
+    .products-grid, .ops-grid { display: grid; gap: 18px; }
+    .ops-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: border-color .3s, transform .3s; }
+    .ops-card:hover { border-color: var(--gold); }
+    .ops-icon, .tile-icon {
+      width: 46px; height: 46px; color: var(--gold);
+      background: rgba(201,162,74,0.12); border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; margin-bottom: 16px; flex-shrink: 0;
+    }
+    .ops-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+    .ops-card p { color: var(--text-muted); font-size: 0.9rem; }
+    .compliance { background: var(--dark-2); }
+    .compliance-grid { display: grid; gap: 14px; }
+    .comp-item { display: flex; gap: 14px; padding: 18px; background: var(--dark); border: 1px solid var(--border); border-radius: 12px; }
+    .comp-item .tile-icon { width: 42px; height: 42px; margin: 0; font-size: 1.1rem; }
+    .comp-item h3 { font-size: 0.98rem; margin-bottom: 5px; }
+    .comp-item p { color: var(--text-muted); font-size: 0.86rem; }
+    .process-steps { display: grid; gap: 14px; counter-reset: step; list-style: none; }
+    .step { position: relative; padding: 20px 20px 20px 78px; background: var(--dark-2); border: 1px solid var(--border); border-radius: 12px; }
+    .step::before {
+      counter-increment: step; content: counter(step);
+      position: absolute; left: 18px; top: 18px;
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--dark); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1.05rem;
+    }
+    .step h3 { font-size: 1rem; margin-bottom: 6px; }
+    .step p { color: var(--text-muted); font-size: 0.86rem; }
+    .contact-grid { display: grid; gap: 36px; }
+    .contact-info h3 { font-size: 1.35rem; margin-bottom: 12px; }
+    .contact-info > p { color: var(--text-muted); margin-bottom: 26px; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+    .contact-detail .tile-icon { width: 38px; height: 38px; border-radius: 9px; margin: 0; font-size: 1rem; }
+    .contact-detail strong { display: block; font-size: 0.88rem; margin-bottom: 2px; }
+    .contact-detail span, .contact-detail a { color: var(--text-muted); font-size: 0.88rem; word-break: break-word; }
+    .contact-detail a:hover { color: var(--gold); }
+    .contact-detail > div > a { display: block; }
+    .contact-detail small { font-size: .78em; opacity: .8; }
+    .phone-line { display: flex !important; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 2px; }
+    .phone-line a[href^='tel'] { color: var(--text); font-weight: 500; font-variant-numeric: tabular-nums; }
+    .wa { font-size: .72rem !important; font-weight: 600; color: #4ade80 !important; border: 1px solid rgba(74,222,128,.4); border-radius: 100px; padding: 2px 10px; line-height: 1.6; }
+    .wa:hover { background: rgba(74,222,128,.12); }
+    .footer-contact { margin-top: 14px; display: grid; gap: 4px; font-size: .86rem; }
+    .footer-contact a { color: var(--text-muted); }
+    .footer-contact a:hover { color: var(--gold); }
+    .contact-form { background: var(--dark-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 500; margin-bottom: 5px; color: var(--text-muted); }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 14px; min-height: 48px;
+      background: var(--dark); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text);
+      font-family: inherit; font-size: 1rem; /* 16px stops iOS zoom */
+      transition: border-color .2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,162,74,.18); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; gap: 0 14px; }
+    .hidden-field { display: none; }
+    .form-actions { display: grid; gap: 10px; }
+    .btn-wa { background: #1f9d55; color: #fff; }
+    .btn-wa:hover { background: #23b35f; transform: translateY(-2px); }
+    .form-status { font-size: .88rem; margin-top: 12px; text-align: center; min-height: 1.4em; }
+    .form-status.ok { color: var(--success); }
+    .form-status.err { color: #f87171; }
+    .form-note { font-size: 0.78rem; color: var(--text-muted); margin-top: 8px; text-align: center; }
+    footer { background: var(--dark); border-top: 1px solid var(--border); padding: 44px 0 calc(28px + env(safe-area-inset-bottom)); }
+    .footer-inner { display: grid; gap: 28px; margin-bottom: 32px; }
+    .footer-brand p { color: var(--text-muted); font-size: 0.88rem; max-width: 300px; margin-top: 10px; }
+    .footer-links h3 { font-family: 'Inter', sans-serif; font-size: 0.88rem; margin-bottom: 12px; color: var(--gold); }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 7px; }
+    .footer-links a { color: var(--text-muted); font-size: 0.88rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .footer-bottom { padding-top: 22px; border-top: 1px solid var(--border); display: grid; gap: 8px; font-size: 0.8rem; color: var(--text-muted); }
+
+
+    /* =========================================================
+       MINES
+       ========================================================= */
+    .mines-feature {
+      position: relative; border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border); margin-bottom: 28px; background: var(--dark-3);
+    }
+    .mines-feature img { width: 100%; object-fit: cover; object-position: 35% center; aspect-ratio: 4 / 3; }
+    .mines-feature figcaption { padding: 20px; }
+    .mines-feature h3 { font-size: clamp(1.4rem, 5.5vw, 2.2rem); margin-bottom: 8px; }
+    .mines-feature p { color: rgba(239,231,214,.85); font-size: .92rem; max-width: 560px; }
+    .spec-chips { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+    .chip { background: rgba(18,14,10,.7); border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+    .chip b { display: block; color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.1rem; line-height: 1.2; }
+    .chip span { font-size: .72rem; color: var(--text-muted); }
+    .mine-types { display: grid; gap: 14px; margin-bottom: 36px; }
+    .mine-type { background: var(--dark-2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .mine-type h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .mine-type p { color: var(--text-muted); font-size: .88rem; }
+    .gallery-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+    .gallery-head h3 { font-size: 1.25rem; }
+    .gallery-hint { font-size: .78rem; color: var(--text-muted); }
+    .gallery {
+      display: grid; grid-auto-flow: column; grid-auto-columns: 82%;
+      gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+      padding-bottom: 12px; margin: 0 -16px; padding-left: 16px; padding-right: 16px; scroll-padding: 0 16px;
+      scrollbar-width: thin; scrollbar-color: var(--gold-dark) transparent;
+    }
+    .shot { scroll-snap-align: start; margin: 0; }
+    .shot button { display: block; width: 100%; padding: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--dark-3); cursor: zoom-in; }
+    .shot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .5s var(--ease); }
+    .shot button:hover img { transform: scale(1.05); }
+    .shot figcaption { padding: 10px 2px 0; }
+    .shot strong { display: block; font-size: .9rem; }
+    .shot span { font-size: .78rem; color: var(--text-muted); }
+    .h-click { display: none; }
+    .credits { margin-top: 18px; font-size: .72rem; color: var(--text-muted); line-height: 1.6; }
+    .credits a { text-decoration: underline; text-underline-offset: 2px; }
+    .credits a:hover { color: var(--gold); }
+
+    /* =========================================================
+       LICENCES & DOCUMENTS
+       ========================================================= */
+    .docs-grid { display: grid; gap: 14px; }
+    .doc-card { display: flex; flex-direction: column; gap: 14px; background: var(--dark); border: 1px solid var(--border); border-radius: 12px; padding: 18px; }
+    .doc-top { display: flex; gap: 14px; align-items: flex-start; }
+    .doc-top .tile-icon { margin: 0; }
+    .doc-card h3 { font-size: 1rem; margin-bottom: 3px; }
+    .doc-meta { font-size: .8rem; color: var(--text-muted); }
+    .doc-ref { display: inline-block; margin-top: 6px; font-size: .7rem; font-weight: 600; letter-spacing: .04em; color: #fca5a5; background: rgba(180,35,24,.16); border: 1px solid rgba(248,113,113,.35); padding: 2px 8px; border-radius: 100px; }
+    .doc-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: auto; }
+    .doc-actions .btn { min-height: 44px; padding: 10px 14px; font-size: .88rem; }
+    .verify-box { margin-top: 28px; display: grid; gap: 10px; background: rgba(201,162,74,.08); border: 1px solid var(--border); border-left: 4px solid var(--gold); border-radius: 12px; padding: 20px; }
+    .verify-box h3 { font-size: 1.05rem; }
+    .verify-box p, .verify-box li { color: var(--text-muted); font-size: .88rem; }
+    .verify-box ul { padding-left: 18px; display: grid; gap: 4px; }
+    .licence-item a:hover strong { text-decoration: underline; }
+
+    /* dialogs (document viewer + photo lightbox) */
+    dialog { margin: auto; }
+    dialog.viewer { border: 1px solid var(--border); border-radius: 14px; padding: 0; background: var(--dark-2); color: var(--text); width: min(1000px, 94vw); height: min(90vh, 1100px); overflow: hidden; }
+    dialog.viewer::backdrop { background: rgba(0,0,0,.75); backdrop-filter: blur(3px); }
+    .viewer-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px 10px 18px; border-bottom: 1px solid var(--border); }
+    .viewer-bar strong { font-size: .92rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .viewer-bar .acts { display: flex; gap: 8px; flex-shrink: 0; }
+    .viewer-bar .btn { min-height: 40px; padding: 8px 14px; font-size: .85rem; }
+    dialog.viewer iframe { width: 100%; height: calc(100% - 61px); border: 0; background: #fff; }
+    dialog.lightbox { border: 0; padding: 0; background: transparent; max-width: 96vw; max-height: 94vh; overflow: visible; }
+    dialog.lightbox::backdrop { background: rgba(0,0,0,.88); }
+    dialog.lightbox img { max-width: 96vw; max-height: 80vh; border-radius: 10px; object-fit: contain; margin: 0 auto; }
+    dialog.lightbox p { color: #e8e6e3; font-size: .85rem; text-align: center; margin-top: 10px; }
+    dialog.lightbox .ctrl { position: absolute; top: -52px; right: 0; }
+
+    /* scroll reveal */
+    .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .js .reveal.in { opacity: 1; transform: none; }
+
+    /* =========================================================
+       ≥ 480px — large phones
+       ========================================================= */
+    @media (min-width: 480px) {
+      .spec-chips { grid-template-columns: repeat(4, 1fr); }
+      .hero-btns { flex-direction: row; flex-wrap: wrap; }
+      .slide-count { display: inline; margin-right: 6px; }
+      .form-row { grid-template-columns: 1fr 1fr; }
+      .form-actions { grid-template-columns: 1fr 1fr; }
+      .licences-inner { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* =========================================================
+       ≥ 640px — small tablets
+       ========================================================= */
+    @media (min-width: 640px) {
+      :root { --nav-h: 72px; }
+      .notice { font-size: 0.78rem; }
+      .n-long { display: inline; } .n-short { display: none; }
+      .logo { gap: 12px; }
+      .logo-mark { width: 40px; }
+      .wordmark b { font-size: 1.2rem; }
+      .wordmark small { font-size: .6rem; }
+      .badge { font-size: .76rem; padding: 6px 14px; }
+      .slide-text { font-size: 1.1rem; }
+      .hero-stats { padding: 28px 0; gap: 20px; }
+      .stat-value { font-size: 1.7rem; }
+      .stat-label { font-size: 0.82rem; }
+      .about-cards, .products-grid, .compliance-grid, .process-steps { grid-template-columns: 1fr 1fr; }
+      .ops-grid { grid-template-columns: 1fr 1fr; }
+      .ops-grid > :last-child { grid-column: 1 / -1; }
+      .footer-inner { grid-template-columns: 1.4fr 1fr; }
+      .footer-bottom { grid-template-columns: 1fr auto; }
+      .contact-form { padding: 28px; }
+      .mines-feature img { aspect-ratio: 16 / 9; }
+      .mines-feature figcaption { padding: 26px 28px; }
+      .mine-types, .docs-grid { grid-template-columns: 1fr 1fr; }
+      .gallery { grid-auto-columns: 46%; }
+      .verify-box { padding: 24px 28px; }
+    }
+
+    /* =========================================================
+       ≥ 900px — desktop
+       ========================================================= */
+    @media (min-width: 1080px) {
+      .menu-toggle { display: none; }
+      .nav-links {
+        display: flex; position: static; flex-direction: row; align-items: center; gap: 22px;
+        padding: 0; background: none; border: 0; max-height: none; overflow: visible;
+      }
+      .nav-links a { padding: 0; font-size: 0.88rem; }
+      .nav-links .nav-cta { margin: 0; padding: 10px 18px; font-size: 0.86rem; border-radius: 8px; }
+    }
+
+    @media (min-width: 900px) {
+      .slide { align-items: center; }
+      .slide::after {
+        background: linear-gradient(100deg, rgba(18,14,10,0.94) 0%, rgba(18,14,10,0.78) 42%, rgba(18,14,10,0.25) 78%, rgba(18,14,10,0.1) 100%);
+      }
+      .slide-content { padding-top: calc(var(--nav-h) + var(--notice-h)); padding-bottom: 60px; }
+      .slide-content > * { max-width: 640px; }
+      .hero-controls { bottom: 36px; }
+      section.block { padding: 96px 0; }
+      .section-header { margin-bottom: 52px; }
+      .about-grid { grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: start; }
+      .about-cards { grid-template-columns: 1fr; }
+      .products-grid, .ops-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+      .ops-grid > :last-child { grid-column: auto; }
+      .card:hover, .ops-card:hover { transform: translateY(-4px); }
+      .process-steps { grid-template-columns: repeat(4, 1fr); }
+      .step { padding: 74px 20px 22px; text-align: center; }
+      .step::before { left: 50%; transform: translateX(-50%); }
+      .licences-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px 48px; }
+      .contact-grid { grid-template-columns: 1fr 1fr; gap: 44px; }
+      .footer-inner { grid-template-columns: 1.6fr 1fr; }
+      .mines-feature img { aspect-ratio: 21 / 9; }
+      .mines-feature::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(18,14,10,.96) 0%, rgba(18,14,10,.6) 45%, rgba(18,14,10,0) 75%); }
+      .mines-feature figcaption { position: absolute; z-index: 1; left: 0; bottom: 0; padding: 40px; max-width: 760px; }
+      .mine-types, .docs-grid { grid-template-columns: repeat(3, 1fr); }
+      .gallery { grid-auto-flow: row; grid-template-columns: repeat(4, 1fr); grid-auto-columns: auto; overflow: visible; margin: 0; padding: 0; }
+      .gallery .shot:first-child { grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; }
+      .gallery .shot:first-child button { flex: 1; position: relative; }
+      .gallery .shot:first-child img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; }
+      .gallery .shot:nth-child(n+6) { grid-column: span 2; }
+      .gallery .shot:nth-child(n+6) img { aspect-ratio: 21 / 9; object-position: center 35%; }
+      .h-touch { display: none; } .h-click { display: inline; }
+    }
+
+    @media (min-width: 1200px) {
+      .slide-title { font-size: 3.9rem; }
+    }
+
+    /* =========================================================
+       REDUCED MOTION
+       ========================================================= */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; }
+      .slide-bg { transform: none !important; }
+      .js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.5 4.5-2.2 1.4a11 11 0 0 0 6.3 6.3l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 10l9-6 9 6M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4L3 6.5v13.5L9 17.5l6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M5 7h14M5 7l-3 7a3.2 3.2 0 0 0 6 0zM19 7l-3 7a3.2 3.2 0 0 0 6 0z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.6-3.3 8.3-8 9-4.7-.7-8-4.4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-pick" viewBox="0 0 24 24"><path d="M4 20l9-9M14 4c3 0 6 3 6 6M14 4c-2.5 1-4.5 2.5-5.5 4.5M20 10c-1 2.5-2.5 4.5-4.5 5.5"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 7h11v9H2zM13 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="M10.5 13.5L3 11l1.5-1.5 8 .5 4-4.5a2 2 0 0 1 3 3l-4.5 4 .5 8L14 22l-2.5-7.5-3.5 3V20l-1.5 1-1-3-3-1L4 15.5h2.5z"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="notice" role="note"><span class="n-long">Academic project · AfriShield Gold Ltd is a hypothetical company</span><span class="n-short">Class project · Hypothetical company</span></div>
+    <nav aria-label="Main">
+      <div class="container nav-inner">
+        <a href="#top" class="logo" aria-label="AfriShield Gold, home">
+          <picture><source srcset="assets/afrishield-shield.webp" type="image/webp" /><img class="logo-mark" src="assets/afrishield-shield.png" width="253" height="304" alt="" /></picture>
+          <span class="wordmark"><b>Afrishield <span class="accent">Gold</span></b><small>Est. 2024</small></span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <svg class="icon-svg i-menu"><use href="#i-menu"/></svg>
+          <svg class="icon-svg i-close"><use href="#i-close"/></svg>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#mines">Mines</a></li>
+          <li><a href="#operations">Operations</a></li>
+          <li><a href="#compliance">Compliance</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#licences">Licences</a></li>
+          <li><a href="#contact" class="nav-cta">Contact Desk</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO SLIDER ================= -->
+    <section class="hero" id="top" aria-roledescription="carousel" aria-label="AfriShield Gold highlights">
+      <div class="slides" id="slides" aria-live="off">
+
+        <article class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 4" id="slide-1">
+          <img class="slide-bg" alt="" fetchpriority="high" decoding="async"
+               src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1080&q=75"
+               srcset="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=640&h=1100&q=70 640w,
+                       https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1080&q=75 1080w,
+                       https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1920&q=75 1920w"
+               sizes="100vw" />
+          <div class="container slide-content">
+            <div class="badge">Secure · Ethical · African Gold</div>
+            <h1 class="slide-title">Responsible Gold from <span>Uganda &amp; the DRC</span></h1>
+            <p class="slide-text">A licensed gold trading company headquartered in Kampala. We buy only from licensed, verified sources and move every gram through supervised, fully documented channels.</p>
+            <div class="hero-btns">
+              <a href="#contact" class="btn btn-primary">Request Partnership</a>
+              <a href="#about" class="btn btn-outline">Who We Are</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4" id="slide-2">
+          <img class="slide-bg" alt="" decoding="async" style="--pos: 40% center"
+               src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1080&q=75"
+               srcset="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=640&h=1100&q=70 640w,
+                       https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1080&q=75 1080w,
+                       https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=75 1920w"
+               sizes="100vw" />
+          <div class="container slide-content">
+            <div class="badge">Chain of Custody</div>
+            <h2 class="slide-title">Every Gram, <span>Documented</span></h2>
+            <p class="slide-text">Named source, licensed seller, royalty receipts, permits and assay certificates, all kept in one due diligence file a refiner can audit end to end.</p>
+            <div class="hero-btns">
+              <a href="#process" class="btn btn-primary">See How We Work</a>
+              <a href="#compliance" class="btn btn-outline">Compliance Framework</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4" id="slide-3">
+          <img class="slide-bg" alt="" decoding="async"
+               src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1080&q=75"
+               srcset="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=640&h=1100&q=70 640w,
+                       https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1080&q=75 1080w,
+                       https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1920&q=75 1920w"
+               sizes="100vw" />
+          <div class="container slide-content">
+            <div class="badge">Assay &amp; Refining</div>
+            <h2 class="slide-title">Independently Assayed. <span>Refined to 99.9%.</span></h2>
+            <p class="slide-text">Each lot is weighed and fire-assayed, then refined by a licensed Ugandan refinery to the 99.9% purity required for export under the Mining and Minerals Act, 2022.</p>
+            <div class="hero-btns">
+              <a href="#products" class="btn btn-primary">Explore Products</a>
+              <a href="#contact" class="btn btn-outline">Request Assay Data</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4" id="slide-4">
+          <img class="slide-bg" alt="" decoding="async" style="--pos: 70% center"
+               src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1080&q=75"
+               srcset="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=640&h=1100&q=70 640w,
+                       https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1080&q=75 1080w,
+                       https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=75 1920w"
+               sizes="100vw" />
+          <div class="container slide-content">
+            <div class="badge">Export Markets</div>
+            <h2 class="slide-title">Permitted Export to <span>Global Refiners</span></h2>
+            <p class="slide-text">Insured, tracked shipments to supervised buyers in the UAE and beyond, each with its own export permit, certificate of analysis and complete due diligence file.</p>
+            <div class="hero-btns">
+              <a href="#operations" class="btn btn-primary">Where We Operate</a>
+              <a href="#contact" class="btn btn-outline">Talk to the Trade Desk</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="container hero-controls">
+        <div class="dots" role="tablist" aria-label="Choose slide" id="dots">
+          <button class="dot" role="tab" aria-selected="true" aria-controls="slide-1" aria-label="Slide 1: Responsible gold"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-controls="slide-2" aria-label="Slide 2: Chain of custody" tabindex="-1"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-controls="slide-3" aria-label="Slide 3: Assay and refining" tabindex="-1"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-controls="slide-4" aria-label="Slide 4: Export markets" tabindex="-1"></button>
+        </div>
+        <div class="ctrl-group">
+          <span class="slide-count" aria-hidden="true"><b id="slideNow">01</b> / 04</span>
+          <button class="ctrl" id="prevBtn" aria-label="Previous slide"><svg class="icon-svg"><use href="#i-left"/></svg></button>
+          <button class="ctrl" id="nextBtn" aria-label="Next slide"><svg class="icon-svg"><use href="#i-right"/></svg></button>
+          <button class="ctrl" id="pauseBtn" aria-label="Pause autoplay" aria-pressed="false">
+            <svg class="icon-svg i-pause"><use href="#i-pause"/></svg>
+            <svg class="icon-svg i-play"><use href="#i-play"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="hero-progress" aria-hidden="true"><span id="progress"></span></div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <div class="stats-band">
+      <div class="container hero-stats">
+        <div><div class="stat-value">100%</div><div class="stat-label">Documented origin</div></div>
+        <div><div class="stat-value">99.9%</div><div class="stat-label">Export purity standard</div></div>
+        <div><div class="stat-value">5-Step</div><div class="stat-label">OECD due diligence</div></div>
+      </div>
+    </div>
+
+    <div class="licences">
+      <div class="container licences-inner">
+        <div class="licence-item"><a href="#licences"><strong>URSB Registered</strong><span>Companies Act, 2012</span></a></div>
+        <div class="licence-item"><a href="#licences"><strong>MEMD Licensed</strong><span>Mineral Dealer (Precious Metals)</span></a></div>
+        <div class="licence-item"><a href="#licences"><strong>Mining Cadastre</strong><span>Registered buyer &amp; seller</span></a></div>
+        <div class="licence-item"><a href="#licences"><strong>FIA Registered</strong><span>AML / KYC compliant</span></a></div>
+        <div class="licence-item"><a href="#licences"><strong>OECD Aligned</strong><span>5-step due diligence</span></a></div>
+        <div class="licence-item"><a href="#licences"><strong>ICGLR Ready</strong><span>Regional certification</span></a></div>
+      </div>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="block">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Who We Are</div>
+          <h2>A Licensed Bridge Between African Gold and Global Markets</h2>
+          <p>We operate only inside formal channels. Every lot we handle carries a verifiable paper trail from source to export.</p>
+        </div>
+        <div class="about-grid">
+          <div class="about-content reveal">
+            <h3>Our Model</h3>
+            <p>AfriShield Gold Ltd offers international buyers a transparent, fully documented alternative to informal gold trade in East and Central Africa. We trade only with licence holders recognised under Uganda's Mining and Minerals Act, 2022, and, in the DRC, with registered cooperatives, négociants and comptoirs.</p>
+            <p>Our headquarters and trading desk are in Kampala. Gold is bought from licensed operators in Uganda and validated sites in eastern DRC, refined locally to 99.9% purity, then exported under a permit for each consignment. We do not buy gold of unknown or high-risk origin.</p>
+            <ul class="about-list">
+              <li>Mineral dealer's licence (precious metals) and registration on the Mining Cadastre</li>
+              <li>Named source mines or cooperatives in validated zones</li>
+              <li>Independent assay (fire assay / XRF) for every consignment</li>
+              <li>CEEC certificate and DRC export permit for every Congolese lot</li>
+              <li>Uganda import and export permits, with royalty payment records</li>
+              <li>KYC / AML screening of every counterparty</li>
+            </ul>
+          </div>
+          <div class="about-cards">
+            <div class="card reveal">
+              <img class="card-img" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?auto=format&fit=crop&w=800&q=70" alt="Giraffe on the savanna at sunset, East Africa" />
+              <div class="card-body">
+                <h3>Uganda Hub</h3>
+                <p>Trading desk, refining partnerships and secure logistics, under Ministry of Energy &amp; Mineral Development oversight.</p>
+              </div>
+            </div>
+            <div class="card reveal">
+              <img class="card-img" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=70" alt="Misty green hills at sunrise" />
+              <div class="card-body">
+                <h3>DRC Coordination</h3>
+                <p>Licensed artisanal zones and cooperative networks. Every lot is assayed, valued and certified by CEEC before it crosses a border.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRODUCTS ================= -->
+    <section id="products" class="block products">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">What We Supply</div>
+          <h2>Gold Products for Institutional Buyers</h2>
+          <p>Assayed, documented and prepared to specification. Minimum volumes apply, and all material carries full chain-of-custody records.</p>
+        </div>
+        <div class="products-grid">
+          <article class="card reveal">
+            <img class="card-img" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1610375461369-d613b564f4c4?auto=format&fit=crop&w=800&h=450&q=70" alt="Stacked refined gold bars" />
+            <div class="card-body">
+              <span class="tag">Export</span>
+              <h3>Refined Gold Bars</h3>
+              <p>99.9%+ fine bars from a licensed Ugandan refinery, serial-numbered and sealed with assay certificate. Export grade.</p>
+              <div class="product-meta">999.0 – 999.9 fineness · 1 kg bars</div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&h=450&q=70" alt="Acacia tree on the African plains at sunset" />
+            <div class="card-body">
+              <span class="tag">Domestic supply</span>
+              <h3>Doré &amp; Alluvial Gold</h3>
+              <p>Unrefined gold from verified artisanal and small-scale sources, supplied only to licensed refiners in Uganda for refining before export.</p>
+              <div class="product-meta">Typically 80–95% Au · Traceable origin</div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&h=450&q=70" alt="Laboratory sample tubes being tested" />
+            <div class="card-body">
+              <span class="tag">Documentation</span>
+              <h3>Assayed Lots</h3>
+              <p>Consolidated lots with independent laboratory certificates of weight and fineness, ready for supervised shipment.</p>
+              <div class="product-meta">Full assay reports · Export-ready packaging</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= MINES ================= -->
+    <section id="mines" class="block">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Mines</div>
+          <h2>Where the Gold Comes From</h2>
+          <p>We buy from three kinds of licensed operation, from giant open-pit mines that move rock with 400-tonne trucks to small cooperatives working by hand. Every one is verified before we buy a gram.</p>
+        </div>
+
+        <figure class="mines-feature reveal">
+          <img loading="lazy" decoding="async"
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Cat793C_LeTourneau_L-1850_Super_Pit.JPG/1280px-Cat793C_LeTourneau_L-1850_Super_Pit.JPG"
+               srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Cat793C_LeTourneau_L-1850_Super_Pit.JPG/960px-Cat793C_LeTourneau_L-1850_Super_Pit.JPG 960w,
+                       https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Cat793C_LeTourneau_L-1850_Super_Pit.JPG/1280px-Cat793C_LeTourneau_L-1850_Super_Pit.JPG 1280w,
+                       https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Cat793C_LeTourneau_L-1850_Super_Pit.JPG/1920px-Cat793C_LeTourneau_L-1850_Super_Pit.JPG 1920w"
+               sizes="(min-width: 1180px) 1140px, 100vw"
+               alt="A LeTourneau L-1850 wheel loader filling a Caterpillar 793C haul truck with ore at the Super Pit gold mine, Western Australia" />
+          <figcaption>
+            <div class="eyebrow">Large-scale gold mining</div>
+            <h3>Machines the Size of Houses</h3>
+            <p>A LeTourneau L-1850 loader fills a Caterpillar 793C haul truck with gold ore at the Super Pit, Kalgoorlie. Trucks like this carry a full load of rock up and out of the pit every few minutes, around the clock.</p>
+            <div class="spec-chips">
+              <div class="chip"><b>~227 t</b><span>CAT 793 payload</span></div>
+              <div class="chip"><b>~363 t</b><span>CAT 797F payload</span></div>
+              <div class="chip"><b>~4 m</b><span>Tyre height, CAT 797</span></div>
+              <div class="chip"><b>42 m³</b><span>Komatsu PC8000 bucket</span></div>
+            </div>
+          </figcaption>
+        </figure>
+
+        <div class="mine-types">
+          <div class="mine-type reveal">
+            <div class="tile-icon"><svg class="icon-svg"><use href="#i-truck"/></svg></div>
+            <h3>Large-scale open pit</h3>
+            <p>Industrial mines with shovels, haul trucks and processing plants. We buy doré or refined gold through formal offtake agreements with licensed operators.</p>
+          </div>
+          <div class="mine-type reveal">
+            <div class="tile-icon"><svg class="icon-svg"><use href="#i-pick"/></svg></div>
+            <h3>Small-scale licensed mines</h3>
+            <p>Locally owned operations with a valid mining licence, smaller excavators and simple processing. Site visits and production records on file.</p>
+          </div>
+          <div class="mine-type reveal">
+            <div class="tile-icon"><svg class="icon-svg"><use href="#i-shield"/></svg></div>
+            <h3>Artisanal cooperatives</h3>
+            <p>Registered cooperatives in validated, conflict-free zones. We pay fair, documented prices and support safer, mercury-free practices.</p>
+          </div>
+        </div>
+
+        <div class="gallery-head">
+          <h3>Inside the World's Big Gold Digs</h3>
+          <span class="gallery-hint" aria-hidden="true"><span class="h-touch">Swipe · tap to enlarge</span><span class="h-click">Click to enlarge</span></span>
+        </div>
+        <div class="gallery" id="gallery">
+          <figure class="shot"><button type="button" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Super_Pit_Gold_Mine%2C_Kalgoorlie-Boulder_4.jpg/1920px-Super_Pit_Gold_Mine%2C_Kalgoorlie-Boulder_4.jpg"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Super_Pit_Gold_Mine%2C_Kalgoorlie-Boulder_4.jpg/960px-Super_Pit_Gold_Mine%2C_Kalgoorlie-Boulder_4.jpg" alt="Haul trucks climbing the benches of the Super Pit open-pit gold mine" /></button><figcaption><strong>Haul trucks on the ramp</strong><span>Super Pit gold mine, Kalgoorlie, Australia</span></figcaption></figure>
+          <figure class="shot"><button type="button" data-full="https://upload.wikimedia.org/wikipedia/commons/b/bc/Caterpillar-797-haul-truck-the-big-mining-truck.jpg"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Caterpillar-797-haul-truck-the-big-mining-truck.jpg" alt="A Caterpillar 797 haul truck with a person standing beside its wheel for scale" /></button><figcaption><strong>Caterpillar 797</strong><span>One of the largest haul trucks ever built</span></figcaption></figure>
+          <figure class="shot"><button type="button" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Komatsu_PC8000%2C_Super_Pit%2C_2016.jpg/1920px-Komatsu_PC8000%2C_Super_Pit%2C_2016.jpg"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Komatsu_PC8000%2C_Super_Pit%2C_2016.jpg/960px-Komatsu_PC8000%2C_Super_Pit%2C_2016.jpg" alt="Komatsu PC8000 hydraulic face shovel at the Super Pit gold mine" /></button><figcaption><strong>Komatsu PC8000 shovel</strong><span>Excavator digging ore, Super Pit</span></figcaption></figure>
+          <figure class="shot"><button type="button" data-full="https://upload.wikimedia.org/wikipedia/commons/0/0c/Liebherr_t282_1.jpg"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Liebherr_t282_1.jpg" alt="Liebherr T 282 ultra-class mining truck" /></button><figcaption><strong>Liebherr T 282</strong><span>Ultra-class truck, ~363 t payload</span></figcaption></figure>
+          <figure class="shot"><button type="button" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Geita_open_pit_gold_mine.jpg/1920px-Geita_open_pit_gold_mine.jpg"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Geita_open_pit_gold_mine.jpg/960px-Geita_open_pit_gold_mine.jpg" alt="Aerial view of the Geita open-pit gold mine in Tanzania" /></button><figcaption><strong>Geita Gold Mine</strong><span>Open pit in Tanzania, East Africa</span></figcaption></figure>
+          <figure class="shot"><button type="button" data-full="https://upload.wikimedia.org/wikipedia/commons/5/59/Caterpillar_797_Truck2.jpg"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/5/59/Caterpillar_797_Truck2.jpg" alt="Front view of a Caterpillar 797 truck with workers on its stairway" /></button><figcaption><strong>CAT 797 up close</strong><span>Workers on the access stairway</span></figcaption></figure>
+          <figure class="shot"><button type="button" data-full="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Sunrise_Dam_Gold_Mine_open_pit_11.jpg/1920px-Sunrise_Dam_Gold_Mine_open_pit_11.jpg"><img loading="lazy" decoding="async" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Sunrise_Dam_Gold_Mine_open_pit_11.jpg/960px-Sunrise_Dam_Gold_Mine_open_pit_11.jpg" alt="Terraced walls of the Sunrise Dam open-pit gold mine" /></button><figcaption><strong>Sunrise Dam pit</strong><span>Benches cut for haul roads</span></figcaption></figure>
+        </div>
+        <p class="credits">Photos are real mines and machines shown to illustrate the industry; they are not AfriShield sites. Credits (Wikimedia Commons):
+          <a href="https://commons.wikimedia.org/wiki/File:Cat793C_LeTourneau_L-1850_Super_Pit.JPG" target="_blank" rel="noopener">Geomartin, CC BY-SA 4.0</a> ·
+          <a href="https://commons.wikimedia.org/wiki/File:Super_Pit_Gold_Mine,_Kalgoorlie-Boulder_4.jpg" target="_blank" rel="noopener">Rr2000, CC BY-SA 3.0</a> ·
+          <a href="https://commons.wikimedia.org/wiki/File:Caterpillar-797-haul-truck-the-big-mining-truck.jpg" target="_blank" rel="noopener">Lechhabmed, CC BY-SA 4.0</a> ·
+          <a href="https://commons.wikimedia.org/wiki/File:Komatsu_PC8000,_Super_Pit,_2016.jpg" target="_blank" rel="noopener">Bahnfrend, CC BY-SA 4.0</a> ·
+          <a href="https://commons.wikimedia.org/wiki/File:Liebherr_t282_1.jpg" target="_blank" rel="noopener">René Engel, CC BY-SA 3.0</a> ·
+          <a href="https://commons.wikimedia.org/wiki/File:Geita_open_pit_gold_mine.jpg" target="_blank" rel="noopener">Gordon Greenall, CC BY-SA 2.0</a> ·
+          <a href="https://commons.wikimedia.org/wiki/File:Caterpillar_797_Truck2.jpg" target="_blank" rel="noopener">Dionisius Purba, CC BY 2.0</a> ·
+          <a href="https://commons.wikimedia.org/wiki/File:Sunrise_Dam_Gold_Mine_open_pit_11.jpg" target="_blank" rel="noopener">Calistemon, CC BY-SA 4.0</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= OPERATIONS ================= -->
+    <section id="operations" class="block">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Where We Operate</div>
+          <h2>East &amp; Central Africa Focus</h2>
+          <p>A presence along the key gold-producing and transit corridors of the Great Lakes region.</p>
+        </div>
+        <div class="ops-grid">
+          <div class="ops-card reveal">
+            <div class="ops-icon"><svg class="icon-svg"><use href="#i-home"/></svg></div>
+            <h3>Uganda</h3>
+            <p>Headquarters and trading desk in Kampala. Licensed by the Ministry of Energy &amp; Mineral Development, with refining partners and secure logistics providers.</p>
+          </div>
+          <div class="ops-card reveal">
+            <div class="ops-icon"><svg class="icon-svg"><use href="#i-pick"/></svg></div>
+            <h3>Democratic Republic of Congo</h3>
+            <p>Sourcing from validated artisanal zones and licensed cooperatives, under the DRC Mining Code, CEEC certification and the ICGLR Regional Certification Mechanism.</p>
+          </div>
+          <div class="ops-card reveal">
+            <div class="ops-icon"><svg class="icon-svg"><use href="#i-plane"/></svg></div>
+            <h3>Export Markets</h3>
+            <p>Main destination: supervised buyers and refiners in the UAE (Dubai). Every shipment carries a full due diligence file, transport records and proof of royalty payment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMPLIANCE ================= -->
+    <section id="compliance" class="block compliance">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Standards &amp; Oversight</div>
+          <h2>Built for Regulatory Scrutiny</h2>
+          <p>Every transaction is structured so a Dubai refiner, European importer or institutional buyer can complete their own due diligence without gaps.</p>
+        </div>
+        <div class="compliance-grid">
+          <div class="comp-item reveal">
+            <div class="tile-icon"><svg class="icon-svg"><use href="#i-doc"/></svg></div>
+            <div><h3>OECD Due Diligence Guidance</h3><p>The five-step framework, applied to every source: management systems, risk assessment, risk mitigation, independent audit and public reporting.</p></div>
+          </div>
+          <div class="comp-item reveal">
+            <div class="tile-icon"><svg class="icon-svg"><use href="#i-bank"/></svg></div>
+            <div><h3>Uganda Mining &amp; Minerals Act, 2022</h3><p>Licensed dealing only, Mining Cadastre registration, a permit for every import and export consignment, and refining to 99.9% before export.</p></div>
+          </div>
+          <div class="comp-item reveal">
+            <div class="tile-icon"><svg class="icon-svg"><use href="#i-map"/></svg></div>
+            <div><h3>CEEC &amp; ICGLR Certification</h3><p>DRC lots are assayed, valued and certified by CEEC and carry the ICGLR regional certificate required for legitimate Great Lakes trade.</p></div>
+          </div>
+          <div class="comp-item reveal">
+            <div class="tile-icon"><svg class="icon-svg"><use href="#i-search"/></svg></div>
+            <div><h3>UAE Gold Due Diligence Regulations</h3><p>Aligned with the UAE Ministry of Economy's Due Diligence Regulations for Responsible Sourcing of Gold, which apply to every gold source entering the Emirates.</p></div>
+          </div>
+          <div class="comp-item reveal">
+            <div class="tile-icon"><svg class="icon-svg"><use href="#i-scale"/></svg></div>
+            <div><h3>LBMA &amp; EU Conflict Minerals</h3><p>Documentation structured to support LBMA Responsible Gold Guidance and the EU Conflict Minerals Regulation.</p></div>
+          </div>
+          <div class="comp-item reveal">
+            <div class="tile-icon"><svg class="icon-svg"><use href="#i-shield"/></svg></div>
+            <div><h3>Sanctions &amp; High-Risk Screening</h3><p>No sourcing from areas under armed-group control. Ongoing screening against UN, OFAC and other relevant sanctions lists.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROCESS ================= -->
+    <section id="process" class="block">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">How We Work</div>
+          <h2>Transparent Chain of Custody</h2>
+          <p>From cooperative to certified export, every step is documented and verifiable.</p>
+        </div>
+        <ol class="process-steps">
+          <li class="step reveal"><h3>Source Verification</h3><p>Licensed mines and registered cooperatives in validated zones. Site visits and risk assessments on file.</p></li>
+          <li class="step reveal"><h3>Licensed Purchase</h3><p>Buy only from licence holders. DRC lots enter Uganda with a DRC export permit, CEEC certificate and a Ugandan import permit.</p></li>
+          <li class="step reveal"><h3>Assay &amp; Refining</h3><p>Independent assay, royalty payment, then refining to 99.9% at a licensed Ugandan refinery.</p></li>
+          <li class="step reveal"><h3>Permitted Export</h3><p>Export permit and certificate of analysis per consignment. Insured, tracked transport with the full due diligence file.</p></li>
+        </ol>
+      </div>
+    </section>
+
+
+    <!-- ================= LICENCES ================= -->
+    <section id="licences" class="block compliance">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Licences &amp; Documents</div>
+          <h2>View or Download Our Licences</h2>
+          <p>The registrations, licences and permits a legitimate gold trader in Uganda must hold, plus our supply chain policy. As this is a class project, every file is a clearly marked specimen.</p>
+        </div>
+        <div class="docs-grid">
+          <article class="doc-card reveal">
+            <div class="doc-top">
+              <div class="tile-icon"><svg class="icon-svg"><use href="#i-bank"/></svg></div>
+              <div><h3>Company Registration</h3><div class="doc-meta">URSB · Companies Act, 2012</div><span class="doc-ref">Specimen · SPEC-AFG-URSB-0001</span></div>
+            </div>
+            <div class="doc-actions">
+              <a class="btn btn-outline js-view" href="docs/afrishield-certificate-of-incorporation-specimen.pdf" target="_blank" rel="noopener" data-title="Company Registration"><svg class="icon-svg"><use href="#i-eye"/></svg>View</a>
+              <a class="btn btn-primary" href="docs/afrishield-certificate-of-incorporation-specimen.pdf" download><svg class="icon-svg"><use href="#i-download"/></svg>PDF · 182 KB</a>
+            </div>
+          </article>
+          <article class="doc-card reveal">
+            <div class="doc-top">
+              <div class="tile-icon"><svg class="icon-svg"><use href="#i-doc"/></svg></div>
+              <div><h3>Mineral Dealer's Licence (Precious Metals)</h3><div class="doc-meta">MEMD · Mining and Minerals Act, 2022</div><span class="doc-ref">Specimen · SPEC-AFG-MDL-0002</span></div>
+            </div>
+            <div class="doc-actions">
+              <a class="btn btn-outline js-view" href="docs/afrishield-mineral-dealers-licence-specimen.pdf" target="_blank" rel="noopener" data-title="Mineral Dealer's Licence (Precious Metals)"><svg class="icon-svg"><use href="#i-eye"/></svg>View</a>
+              <a class="btn btn-primary" href="docs/afrishield-mineral-dealers-licence-specimen.pdf" download><svg class="icon-svg"><use href="#i-download"/></svg>PDF · 182 KB</a>
+            </div>
+          </article>
+          <article class="doc-card reveal">
+            <div class="doc-top">
+              <div class="tile-icon"><svg class="icon-svg"><use href="#i-map"/></svg></div>
+              <div><h3>Mining Cadastre Registration</h3><div class="doc-meta">MEMD · Mining Cadastre and Registry System</div><span class="doc-ref">Specimen · SPEC-AFG-MCR-0003</span></div>
+            </div>
+            <div class="doc-actions">
+              <a class="btn btn-outline js-view" href="docs/afrishield-mining-cadastre-registration-specimen.pdf" target="_blank" rel="noopener" data-title="Mining Cadastre Registration"><svg class="icon-svg"><use href="#i-eye"/></svg>View</a>
+              <a class="btn btn-primary" href="docs/afrishield-mining-cadastre-registration-specimen.pdf" download><svg class="icon-svg"><use href="#i-download"/></svg>PDF · 182 KB</a>
+            </div>
+          </article>
+          <article class="doc-card reveal">
+            <div class="doc-top">
+              <div class="tile-icon"><svg class="icon-svg"><use href="#i-search"/></svg></div>
+              <div><h3>AML / CFT Registration</h3><div class="doc-meta">Financial Intelligence Authority</div><span class="doc-ref">Specimen · SPEC-AFG-FIA-0004</span></div>
+            </div>
+            <div class="doc-actions">
+              <a class="btn btn-outline js-view" href="docs/afrishield-fia-aml-registration-specimen.pdf" target="_blank" rel="noopener" data-title="AML / CFT Registration"><svg class="icon-svg"><use href="#i-eye"/></svg>View</a>
+              <a class="btn btn-primary" href="docs/afrishield-fia-aml-registration-specimen.pdf" download><svg class="icon-svg"><use href="#i-download"/></svg>PDF · 182 KB</a>
+            </div>
+          </article>
+          <article class="doc-card reveal">
+            <div class="doc-top">
+              <div class="tile-icon"><svg class="icon-svg"><use href="#i-plane"/></svg></div>
+              <div><h3>Export Permit (sample consignment)</h3><div class="doc-meta">MEMD · Form 52, Mining and Minerals Regulations, 2023</div><span class="doc-ref">Specimen · SPEC-AFG-EXP-0005</span></div>
+            </div>
+            <div class="doc-actions">
+              <a class="btn btn-outline js-view" href="docs/afrishield-export-permit-specimen.pdf" target="_blank" rel="noopener" data-title="Export Permit (sample consignment)"><svg class="icon-svg"><use href="#i-eye"/></svg>View</a>
+              <a class="btn btn-primary" href="docs/afrishield-export-permit-specimen.pdf" download><svg class="icon-svg"><use href="#i-download"/></svg>PDF · 182 KB</a>
+            </div>
+          </article>
+          <article class="doc-card reveal">
+            <div class="doc-top">
+              <div class="tile-icon"><svg class="icon-svg"><use href="#i-shield"/></svg></div>
+              <div><h3>Responsible Gold Supply Chain Policy</h3><div class="doc-meta">Company policy · OECD Annex II aligned</div><span class="doc-ref">Specimen · SPEC-AFG-POL-0006</span></div>
+            </div>
+            <div class="doc-actions">
+              <a class="btn btn-outline js-view" href="docs/afrishield-oecd-due-diligence-policy.pdf" target="_blank" rel="noopener" data-title="Responsible Gold Supply Chain Policy"><svg class="icon-svg"><use href="#i-eye"/></svg>View</a>
+              <a class="btn btn-primary" href="docs/afrishield-oecd-due-diligence-policy.pdf" download><svg class="icon-svg"><use href="#i-download"/></svg>PDF · 182 KB</a>
+            </div>
+          </article>
+        </div>
+        <div class="verify-box reveal">
+          <h3>Never trust a licence on paper alone</h3>
+          <p>Forged gold licences and export papers are a common tool in gold scams across the region. Before any gold deal:</p>
+          <ul>
+            <li>Check the seller's licence on Uganda's Mining Cadastre and Registry System or directly with the Ministry of Energy and Mineral Development.</li>
+            <li>Confirm the company exists on the URSB registry and that names match on every document.</li>
+            <li>Insist on an independent assay at a lab you choose, and never pay "release", "tax" or "clearance" fees to strangers.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="block">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Get in Touch</div>
+          <h2>Serious Partnership Inquiries Only</h2>
+          <p>We work with licensed refiners, institutional buyers and established trading houses. Please provide full company details.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <h3>AfriShield Gold Ltd</h3>
+            <p>Licensed gold trading company operating between Uganda and the Democratic Republic of Congo. All inquiries are subject to KYC and source verification.</p>
+            <div class="contact-detail"><div class="tile-icon"><svg class="icon-svg"><use href="#i-pin"/></svg></div><div><strong>Uganda Office</strong><span>Kampala Business District, Uganda</span></div></div>
+            <div class="contact-detail"><div class="tile-icon"><svg class="icon-svg"><use href="#i-pin"/></svg></div><div><strong>DRC Coordination</strong><span>Kinshasa &amp; Eastern Provinces (licensed partners)</span></div></div>
+            <div class="contact-detail"><div class="tile-icon"><svg class="icon-svg"><use href="#i-mail"/></svg></div><div><strong>Email</strong><a href="mailto:info@afrishieldgold.com">info@afrishieldgold.com</a><a href="mailto:partnerships@afrishieldgold.com">partnerships@afrishieldgold.com <small>(trade desk)</small></a></div></div>
+            <div class="contact-detail"><div class="tile-icon"><svg class="icon-svg"><use href="#i-phone"/></svg></div><div><strong>Phone / WhatsApp</strong><span class="phone-line"><a href="tel:+256746840004">+256 746 840 004</a><a class="wa" href="https://wa.me/256746840004" target="_blank" rel="noopener">WhatsApp</a></span><span class="phone-line"><a href="tel:+256776524380">+256 776 524 380</a><a class="wa" href="https://wa.me/256776524380" target="_blank" rel="noopener">WhatsApp</a></span></div></div>
+            <div class="contact-detail"><div class="tile-icon"><svg class="icon-svg"><use href="#i-clock"/></svg></div><div><strong>Business Hours</strong><span>Monday – Saturday · 08:00 – 18:00 EAT</span></div></div>
+          </div>
+
+          <!-- Static hosting (GitHub Pages): the form opens a pre-filled email or WhatsApp message -->
+          <form class="contact-form reveal" id="contactForm" name="contact" novalidate>
+            <div class="form-row">
+              <div class="form-group"><label for="name">Full name *</label><input type="text" id="name" name="name" autocomplete="name" required /></div>
+              <div class="form-group"><label for="company">Company name *</label><input type="text" id="company" name="company" autocomplete="organization" required /></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label for="email">Work email *</label><input type="email" id="email" name="email" autocomplete="email" inputmode="email" required /></div>
+              <div class="form-group"><label for="country">Country *</label><input type="text" id="country" name="country" autocomplete="country-name" required /></div>
+            </div>
+            <div class="form-group">
+              <label for="interest">Nature of inquiry *</label>
+              <select id="interest" name="interest" required>
+                <option value="">Select…</option>
+                <option value="offtake">Offtake / purchase inquiry</option>
+                <option value="partnership">Strategic partnership</option>
+                <option value="due-diligence">Due diligence documentation request</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Your requirements, volume interest, and company registration or refiner status…"></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" data-via="email"><svg class="icon-svg"><use href="#i-mail"/></svg>Send by Email</button>
+              <button type="submit" class="btn btn-wa" data-via="whatsapp"><svg class="icon-svg"><use href="#i-phone"/></svg>Send on WhatsApp</button>
+            </div>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            <p class="form-note">By submitting you confirm this is a legitimate business inquiry. We do not respond to speculative or unverified contacts.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <dialog class="viewer" id="docViewer" aria-labelledby="docTitle">
+    <div class="viewer-bar">
+      <strong id="docTitle">Document</strong>
+      <div class="acts">
+        <a class="btn btn-primary" id="docDownload" href="#" download><svg class="icon-svg"><use href="#i-download"/></svg>Download</a>
+        <button class="ctrl" type="button" data-close aria-label="Close document"><svg class="icon-svg"><use href="#i-close"/></svg></button>
+      </div>
+    </div>
+    <iframe id="docFrame" title="Document preview"></iframe>
+  </dialog>
+  <dialog class="lightbox" id="lightbox" aria-label="Enlarged photo">
+    <button class="ctrl" type="button" data-close aria-label="Close photo"><svg class="icon-svg"><use href="#i-close"/></svg></button>
+    <img id="lightboxImg" alt="" />
+    <p id="lightboxCap"></p>
+  </dialog>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#top" class="logo" aria-label="AfriShield Gold, back to top">
+            <picture><source srcset="assets/afrishield-shield.webp" type="image/webp" /><img class="logo-mark" src="assets/afrishield-shield.png" width="253" height="304" alt="" loading="lazy" /></picture>
+            <span class="wordmark"><b>Afrishield <span class="accent">Gold</span></b><small>Est. 2024</small></span>
+          </a>
+          <p class="tagline">Secure. Ethical. African Gold.</p>
+          <p>Licensed, transparent and fully documented gold trading between Uganda, the DRC and international markets.</p>
+          <div class="footer-contact">
+            <a href="mailto:info@afrishieldgold.com">info@afrishieldgold.com</a>
+            <a href="tel:+256746840004">+256 746 840 004</a>
+            <a href="tel:+256776524380">+256 776 524 380</a>
+          </div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-links">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#about">About us</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#mines">Mines</a></li>
+              <li><a href="#operations">Operations</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>Standards</h3>
+            <ul>
+              <li><a href="#compliance">OECD due diligence</a></li>
+              <li><a href="#compliance">CEEC &amp; ICGLR</a></li>
+              <li><a href="#process">Chain of custody</a></li>
+              <li><a href="#licences">Licences &amp; documents</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> AfriShield Gold Ltd. Hypothetical company created for an educational class assignment; not a real business.</span>
+        <span>Kampala, Uganda · Democratic Republic of Congo</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (() => {
+    'use strict';
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---------- Header / nav ---------- */
+    const header = document.getElementById('siteHeader');
+    const toggle = document.getElementById('menuToggle');
+    const links = document.getElementById('navLinks');
+    const setMenu = (open) => {
+      links.classList.toggle('active', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.body.classList.toggle('menu-open', open && innerWidth < 1080);
+    };
+    toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+    addEventListener('resize', () => { if (innerWidth >= 1080) setMenu(false); });
+    const onScroll = () => header.classList.toggle('scrolled', scrollY > 40);
+    addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+    // Highlight the nav link for the section in view
+    const navMap = new Map([...links.querySelectorAll('a[href^="#"]')].map(a => [a.getAttribute('href').slice(1), a]));
+    const secObs = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        const a = navMap.get(en.target.id); if (!a) return;
+        if (en.isIntersecting) { navMap.forEach(l => l.classList.remove('is-current')); a.classList.add('is-current'); }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main section[id]').forEach(s => secObs.observe(s));
+
+    // Scroll reveal
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); revealObs.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    /* ---------- Hero slider ---------- */
+    const hero = document.getElementById('top');
+    const slides = [...hero.querySelectorAll('.slide')];
+    const dots = [...hero.querySelectorAll('.dot')];
+    const progress = document.getElementById('progress');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const counter = document.getElementById('slideNow');
+    const DURATION = 6500;
+    let current = 0;
+    let userPaused = reduceMotion;   // no autoplay for reduced-motion users
+    let hoverPaused = false, focusPaused = false, hiddenPaused = false;
+    progress.style.setProperty('--dur', DURATION + 'ms');
+
+    const isPaused = () => userPaused || hoverPaused || focusPaused || hiddenPaused;
+    const syncPause = () => {
+      hero.classList.toggle('is-paused', isPaused());
+      pauseBtn.setAttribute('aria-pressed', String(userPaused));
+      pauseBtn.setAttribute('aria-label', userPaused ? 'Start autoplay' : 'Pause autoplay');
+      hero.querySelector('.slides').setAttribute('aria-live', userPaused ? 'polite' : 'off');
+    };
+    const restartProgress = () => {
+      progress.classList.remove('run');
+      void progress.offsetWidth;      // reflow so the animation restarts
+      if (!userPaused) progress.classList.add('run');
+    };
+
+    function goTo(i, { focusDot = false } = {}) {
+      const n = slides.length;
+      current = (i + n) % n;
+      slides.forEach((s, k) => {
+        const on = k === current;
+        s.classList.toggle('is-active', on);
+        s.setAttribute('aria-hidden', String(!on));
+        if (on) s.removeAttribute('inert'); else s.setAttribute('inert', '');
+      });
+      dots.forEach((d, k) => {
+        const on = k === current;
+        d.setAttribute('aria-selected', String(on));
+        d.tabIndex = on ? 0 : -1;
+      });
+      counter.textContent = String(current + 1).padStart(2, '0');
+      if (focusDot) dots[current].focus();
+      restartProgress();
+    }
+    const next = () => goTo(current + 1);
+    const prev = () => goTo(current - 1);
+
+    progress.addEventListener('animationend', () => { if (!isPaused()) next(); });
+    document.getElementById('nextBtn').addEventListener('click', next);
+    document.getElementById('prevBtn').addEventListener('click', prev);
+    dots.forEach((d, k) => d.addEventListener('click', () => goTo(k)));
+    document.getElementById('dots').addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1, { focusDot: true }); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(current - 1, { focusDot: true }); }
+      if (e.key === 'Home') { e.preventDefault(); goTo(0, { focusDot: true }); }
+      if (e.key === 'End')  { e.preventDefault(); goTo(slides.length - 1, { focusDot: true }); }
+    });
+    pauseBtn.addEventListener('click', () => {
+      userPaused = !userPaused; syncPause();
+      if (!userPaused) restartProgress(); else progress.classList.remove('run');
+    });
+
+    // Pause on hover (mouse only), while keyboard focus is inside, and when the tab is hidden
+    if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      // Only pause while the pointer is over the text or the controls (the hero fills the screen)
+      hero.querySelectorAll('.slide-content > *, .hero-controls').forEach(el => {
+        el.addEventListener('mouseenter', () => { hoverPaused = true; syncPause(); });
+        el.addEventListener('mouseleave', () => { hoverPaused = false; syncPause(); });
+      });
+    }
+    hero.addEventListener('focusin', e => { if (e.target.matches(':focus-visible')) { focusPaused = true; syncPause(); } });
+    hero.addEventListener('focusout', e => { if (!hero.contains(e.relatedTarget)) { focusPaused = false; syncPause(); } });
+    document.addEventListener('visibilitychange', () => { hiddenPaused = document.hidden; syncPause(); });
+
+    // Touch / pen / mouse swipe
+    let startX = 0, startY = 0, tracking = false;
+    hero.addEventListener('pointerdown', e => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      if (e.target.closest('a, button')) return;
+      tracking = true; startX = e.clientX; startY = e.clientY;
+    });
+    hero.addEventListener('pointerup', e => {
+      if (!tracking) return; tracking = false;
+      const dx = e.clientX - startX, dy = e.clientY - startY;
+      if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.3) (dx < 0 ? next : prev)();
+    });
+    hero.addEventListener('pointercancel', () => { tracking = false; });
+
+    // Arrow keys anywhere in the hero (except inside the dot tablist, handled above)
+    hero.addEventListener('keydown', e => {
+      if (e.target.closest('#dots')) return;
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
+    });
+
+    goTo(0); syncPause();
+
+    /* ---------- Contact form: compose an email or a WhatsApp message (works on any static host) ---------- */
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    const TO_EMAIL = 'info@afrishieldgold.com';
+    const TO_WHATSAPP = '256746840004';
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        status.className = 'form-status err';
+        status.textContent = 'Please complete all required fields.';
+        return;
+      }
+      const via = (e.submitter && e.submitter.dataset.via) || 'email';
+      const f = Object.fromEntries(new FormData(form));
+      const topic = form.interest.options[form.interest.selectedIndex].text;
+      const subject = `Website inquiry: ${topic} (${f.company})`;
+      const body = `Name: ${f.name}\nCompany: ${f.company}\nEmail: ${f.email}\nCountry: ${f.country}\nInquiry: ${topic}\n\n${f.message}`;
+      if (via === 'whatsapp') {
+        window.open(`https://wa.me/${TO_WHATSAPP}?text=${encodeURIComponent('AfriShield Gold: ' + subject + '\n\n' + body)}`, '_blank', 'noopener');
+      } else {
+        window.location.href = `mailto:${TO_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      }
+      status.className = 'form-status ok';
+      status.textContent = via === 'whatsapp'
+        ? 'WhatsApp is opening with your message. Press send to reach our trade desk.'
+        : `Your email app is opening with the message to ${TO_EMAIL}. Press send to finish.`;
+    });
+
+    /* ---------- Document viewer (desktop) — phones open the PDF in a new tab ---------- */
+    const viewer = document.getElementById('docViewer');
+    const frame = document.getElementById('docFrame');
+    document.querySelectorAll('.js-view').forEach(a => a.addEventListener('click', e => {
+      if (innerWidth < 900 || typeof viewer.showModal !== 'function') return; // let the link open normally
+      e.preventDefault();
+      frame.src = a.getAttribute('href');
+      document.getElementById('docTitle').textContent = a.dataset.title + ' (specimen)';
+      document.getElementById('docDownload').href = a.getAttribute('href');
+      viewer.showModal();
+    }));
+    viewer.addEventListener('close', () => { frame.src = 'about:blank'; });
+
+    /* ---------- Photo lightbox ---------- */
+    const lb = document.getElementById('lightbox');
+    document.querySelectorAll('#gallery button[data-full]').forEach(b => b.addEventListener('click', () => {
+      const img = b.querySelector('img');
+      const cap = b.parentElement.querySelector('figcaption');
+      if (typeof lb.showModal !== 'function') { window.open(b.dataset.full, '_blank', 'noopener'); return; }
+      const big = document.getElementById('lightboxImg');
+      big.src = b.dataset.full; big.alt = img.alt;
+      document.getElementById('lightboxCap').textContent = cap ? cap.innerText.replace('\n', ' — ') : '';
+      lb.showModal();
+    }));
+    // close buttons + click on backdrop
+    document.querySelectorAll('dialog').forEach(d => {
+      d.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => d.close()));
+      d.addEventListener('click', e => { if (e.target === d) d.close(); });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })();
+  </script>
+</body>
+</html>
