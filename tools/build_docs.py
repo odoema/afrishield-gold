@@ -22,7 +22,7 @@ h2 = ParagraphStyle('h2', parent=body, fontName='Helvetica-Bold', fontSize=11, l
 cell = ParagraphStyle('c', parent=body, fontSize=9, leading=12)
 cellb = ParagraphStyle('cb', parent=cell, fontName='Helvetica-Bold')
 
-"DISCLAIMER = ("CONFIDENTIAL ACADEMIC SAMPLE. AfriShield Gold Ltd is a hypothetical company. "
+DISCLAIMER = ("CONFIDENTIAL ACADEMIC SAMPLE. AfriShield Gold Ltd is a hypothetical company. "
               "This document is not a licence, permit, certificate or registration, has no legal effect and must not be "
               "relied on for any transaction. Always verify a real licence directly with the issuing authority.")
 
