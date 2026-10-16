@@ -1,0 +1,39 @@
+name: Rebuild confidential academic PDFs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/build_docs.py'
+      - '.github/workflows/rebuild-confidential-pdfs.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild-pdfs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PDF generator
+        run: python -m pip install reportlab
+      - name: Regenerate the six PDFs
+        run: python tools/build_docs.py docs
+      - name: Commit generated PDFs if changed
+        run: |
+          if git diff --quiet -- docs/*.pdf; then
+            echo "Generated PDFs already match the source."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/*.pdf
+          git commit -m "Regenerate confidential academic sample PDFs"
+          git push origin HEAD:main

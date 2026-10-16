@@ -1,5 +1,5 @@
 """Build specimen licence/compliance PDFs for the AfriShield Gold class-project website.
-Every page is watermarked SPECIMEN and states it has no legal effect. No government
+Every page is marked CONFIDENTIAL and states it has no legal effect. No government
 crests, seals or signatures are reproduced."""
 import os, sys
 from reportlab.lib.pagesizes import A4
@@ -22,7 +22,7 @@ h2 = ParagraphStyle('h2', parent=body, fontName='Helvetica-Bold', fontSize=11, l
 cell = ParagraphStyle('c', parent=body, fontSize=9, leading=12)
 cellb = ParagraphStyle('cb', parent=cell, fontName='Helvetica-Bold')
 
-DISCLAIMER = ("SPECIMEN FOR AN ACADEMIC BUSINESS-CLASS PROJECT. AfriShield Gold Ltd is a hypothetical company. "
+"DISCLAIMER = ("CONFIDENTIAL ACADEMIC SAMPLE. AfriShield Gold Ltd is a hypothetical company. "
               "This document is not a licence, permit, certificate or registration, has no legal effect and must not be "
               "relied on for any transaction. Always verify a real licence directly with the issuing authority.")
 
@@ -33,7 +33,7 @@ DOCS = [
        rows=[('Company name','AfriShield Gold Ltd (hypothetical)'),('Registration no.','SPEC-AFG-URSB-0001'),
              ('Company type','Private company limited by shares'),('Registered office','Kampala Business District, Uganda'),
              ('Principal activity','Dealing in, refining arrangements for and export of precious metals'),
-             ('Status','Specimen only: not registered')],
+             ('Status','Confidential academic sample: not registered')],
        notes=['Real company details can be searched on the URSB online registry.']),
   dict(file='afrishield-mineral-dealers-licence-specimen.pdf',
        title="Mineral Dealer's Licence (Precious Metals)", kind='Licence register extract',
@@ -41,7 +41,7 @@ DOCS = [
        rows=[('Licence holder','AfriShield Gold Ltd (hypothetical)'),('Licence no.','SPEC-AFG-MDL-0002'),
              ('Category','Precious metals (gold)'),('Validity','Calendar year; expires 31 December of the year of issue'),
              ('Conditions','Buy and sell only with holders of a mining, dealer or refining licence; keep records of every transaction'),
-             ('Status','Specimen only: not issued')],
+             ('Status','Confidential academic sample: not issued')],
        notes=["Requirements for a dealer's licence include proof of financial resources, a URA tax clearance certificate and evidence of technical competence.",
               'Real licences should be checked on the Mining Cadastre and Registry System or with MEMD.']),
   dict(file='afrishield-mining-cadastre-registration-specimen.pdf',
@@ -49,14 +49,14 @@ DOCS = [
        authority='Mining Cadastre and Registry System (MEMD)', law='Mining and Minerals Act, 2022',
        rows=[('Registered party','AfriShield Gold Ltd (hypothetical)'),('Cadastre account','SPEC-AFG-MCR-0003'),
              ('Role','Buyer and seller of precious metals'),('Documents on file','Certificate of incorporation, memorandum and articles, board resolution, TIN'),
-             ('Status','Specimen only: not registered')],
+             ('Status','Confidential academic sample: not registered')],
        notes=['Buyers and sellers of gold must register on the electronic Mining Cadastre before trading.']),
   dict(file='afrishield-fia-aml-registration-specimen.pdf',
        title='AML / CFT Registration', kind='Licence register extract',
        authority='Financial Intelligence Authority (FIA), Uganda', law='Anti-Money Laundering Act, 2013 (as amended)',
        rows=[('Accountable person','AfriShield Gold Ltd (hypothetical)'),('Reference','SPEC-AFG-FIA-0004'),
              ('Sector','Dealers in precious metals and stones'),('Obligations','Customer due diligence, record keeping, suspicious transaction reporting, compliance officer'),
-             ('Status','Specimen only: not registered')],
+             ('Status','Confidential academic sample: not registered')],
        notes=['Dealers in precious metals are accountable persons under Uganda\'s anti-money-laundering law.']),
   dict(file='afrishield-export-permit-specimen.pdf',
        title='Export Permit: Sample Consignment Record', kind='Permit register extract',
@@ -64,7 +64,7 @@ DOCS = [
        rows=[('Exporter','AfriShield Gold Ltd (hypothetical)'),('Permit no.','SPEC-AFG-EXP-0005'),
              ('Consignment','Refined gold bars, 99.9% fineness'),('Destination','Supervised refiner / buyer, Dubai, UAE'),
              ('Supporting documents','Valid mineral right or refining licence, certificate of origin, certificate of analysis, royalty receipts'),
-             ('Status','Specimen only: not issued')],
+             ('Status','Confidential academic sample: not issued')],
        notes=['A separate export permit is needed for every consignment.', 'Gold must be refined to 99.9% purity before export.']),
   dict(file='afrishield-oecd-due-diligence-policy.pdf',
        title='Responsible Gold Supply Chain Policy', kind='Company policy (OECD Annex II aligned)',
@@ -90,11 +90,11 @@ def draw_page(c, d):
     # red specimen banner
     c.setFillColor(RED); c.rect(1.6*cm, H-4.35*cm, W-3.2*cm, 0.75*cm, fill=1, stroke=0)
     c.setFillColor(colors.white); c.setFont('Helvetica-Bold', 9.5)
-    c.drawCentredString(W/2, H-4.08*cm, 'SPECIMEN · ACADEMIC PROJECT · NOT A VALID LICENCE OR PERMIT')
+    c.drawCentredString(W/2, H-4.08*cm, 'CONFIDENTIAL · ACADEMIC PROJECT · NOT A VALID LICENCE OR PERMIT')
     # watermark
     c.saveState(); c.translate(W/2, H/2-1*cm); c.rotate(35)
     c.setFillColor(colors.Color(0.71, 0.14, 0.09, alpha=0.10)); c.setFont('Helvetica-Bold', 64)
-    c.drawCentredString(0, 30, 'SPECIMEN'); c.setFont('Helvetica-Bold', 26); c.drawCentredString(0, -20, 'NO LEGAL EFFECT')
+    c.drawCentredString(0, 30, 'CONFIDENTIAL'); c.setFont('Helvetica-Bold', 26); c.drawCentredString(0, -20, 'NO LEGAL EFFECT')
     c.restoreState()
     # footer
     c.setStrokeColor(GOLD); c.setLineWidth(1); c.line(1.6*cm, 2.9*cm, W-1.6*cm, 2.9*cm)
@@ -104,8 +104,8 @@ def draw_page(c, d):
 def build(d):
     path = os.path.join(OUT, d['file'])
     c = canvas.Canvas(path, pagesize=A4)
-    c.setTitle(d['title'] + ' (Specimen) | AfriShield Gold Ltd'); c.setAuthor('AfriShield Gold class project')
-    c.setSubject('Specimen document for an academic project. No legal effect.')
+    c.setTitle(d['title'] + ' (Confidential Academic Sample) | AfriShield Gold Ltd'); c.setAuthor('AfriShield Gold class project')
+    c.setSubject('Confidential academic sample document. No legal effect.')
     draw_page(c, d)
     story = [Paragraph(d['title'], ParagraphStyle('t', parent=body, fontName='Times-Bold', fontSize=20, leading=24, textColor=NAVY)),
              Spacer(1, 4),
