@@ -42,6 +42,14 @@
       --text-muted: #b5a891;
       --border: rgba(201, 162, 74, 0.24);
       --success: #22c55e;
+      /* harvest palette (grain division) */
+      --leaf: #6f9a54;
+      --leaf-light: #a9c98a;
+      --leaf-pale: #e3edd6;
+      --forest: #17361f;
+      --forest-2: #2f5a2f;
+      --cream: #f6f1e3;
+      --ink-soft: #4b5a45;
       --nav-h: 64px;
       --notice-h: 30px;
       --radius: 14px;
@@ -627,6 +635,67 @@
       .players { grid-template-columns: repeat(3, 1fr); }
     }
 
+
+    /* =========================================================
+       HARVEST RESTYLE — gold + green for the Grains division
+       ========================================================= */
+    .badge.leaf { background: rgba(111,154,84,.22); border-color: rgba(169,201,138,.5); color: var(--leaf-pale); }
+    .badge.leaf::before { background: var(--leaf-light); }
+    .slide-title span.leaf-text { color: var(--leaf-light); }
+    .btn-leaf { background: linear-gradient(135deg, #7fae5f, var(--forest-2)); color: #fff; }
+    .btn-leaf:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(111,154,84,.35); }
+    .stat-value.leaf, .licence-item strong.leaf { color: var(--leaf-light); }
+    .nav-links a.nav-leaf { color: var(--leaf-light); }
+    .nav-links a.nav-leaf:hover, .nav-links a.nav-leaf.is-current { color: #c6dfac; }
+    .leaf-rule { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 auto 12px; color: var(--leaf); }
+    .leaf-rule::before, .leaf-rule::after { content: ''; width: 44px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+    .leaf-rule::after { background: linear-gradient(90deg, var(--gold), transparent); }
+    .leaf-rule svg { width: 26px; height: 26px; }
+
+    .grains {
+      position: relative; isolation: isolate; overflow: hidden;
+      background:
+        radial-gradient(120% 70% at 100% 0%, rgba(201,162,74,.20), transparent 60%),
+        radial-gradient(90% 60% at 0% 100%, rgba(111,154,84,.22), transparent 60%),
+        linear-gradient(180deg, var(--cream) 0%, #eef1e0 55%, #e6eed8 100%);
+      color: var(--forest);
+    }
+    .grains::before, .grains::after {
+      content: ''; position: absolute; z-index: -1; width: 420px; height: 420px; opacity: .35; pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320' fill='none' stroke='%236f9a54' stroke-width='1.4'%3E%3Cpath d='M60 290C90 190 170 110 300 60'/%3E%3Cpath d='M120 200c-30-30-30-70-10-100 30 20 40 60 10 100z'/%3E%3Cpath d='M170 150c-20-35-10-75 15-100 25 25 25 70-15 100z'/%3E%3Cpath d='M150 190c35-15 75-10 100 15-30 25-70 20-100-15z'/%3E%3Cpath d='M210 130c35-10 70 0 90 25-30 20-65 15-90-25z'/%3E%3Cpath d='M95 245c35-10 70 0 90 25-30 20-65 15-90-25z'/%3E%3C/svg%3E") no-repeat center / contain;
+    }
+    .grains::before { top: -40px; right: -90px; }
+    .grains::after { bottom: 120px; left: -150px; transform: scaleX(-1) rotate(10deg); opacity: .22; }
+    .grains h2, .grains h3, .grains h4 { color: var(--forest); }
+    .grains .eyebrow { color: var(--forest-2); }
+    .grains .section-header p, .grains .grain-intro p, .grains .sub-head p,
+    .grains .card-body p, .grains .flow p, .grains .hub span, .grains .spec-list li { color: var(--ink-soft); }
+    .grains .grain-intro p strong { color: var(--forest); }
+    .grains .grain-intro img { background: var(--leaf-pale); border-color: rgba(31,77,43,.14); box-shadow: 0 18px 40px rgba(47,90,47,.18); }
+    .grains .card {
+      background: #fffdf7; border-color: rgba(31,77,43,.12);
+      box-shadow: 0 6px 22px rgba(47,90,47,.08);
+    }
+    .grains .card:hover { border-color: var(--gold); box-shadow: 0 14px 34px rgba(47,90,47,.16); }
+    .grains .card-img { background: var(--leaf-pale); }
+    .grains .card-body h3 { color: var(--forest); }
+    .grains .tag { color: var(--forest-2); background: var(--leaf-pale); border-color: rgba(111,154,84,.4); }
+    .grains .spec-list li::before { background: var(--gold); }
+    .grains .flow li { background: #fffdf7; border-color: rgba(31,77,43,.12); box-shadow: 0 4px 16px rgba(47,90,47,.06); }
+    .grains .flow li::before { border-color: var(--leaf); color: var(--forest-2); background: var(--leaf-pale); }
+    .grains .flow li.gold-step::before { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: #fff; }
+    .grains .hub { background: rgba(255,253,247,.85); border-color: rgba(31,77,43,.12); border-left: 3px solid var(--leaf); }
+    .grains .hub strong { color: var(--forest-2); }
+    .grains :focus-visible { outline-color: var(--forest-2); }
+    .grains .leaf-rule::before, .grains .leaf-rule::after { height: 1.5px; }
+
+    /* markets: green accents on the grain side */
+    .market .rank.alt { color: var(--leaf-light); background: rgba(111,154,84,.14); border-color: rgba(169,201,138,.4); }
+    .market dt { color: var(--leaf-light); }
+    .player-group .tile-icon.leaf { color: var(--leaf-light); background: rgba(111,154,84,.16); }
+    .process-label .tag.leaf { color: var(--leaf-pale); background: rgba(111,154,84,.18); border-color: rgba(169,201,138,.45); }
+    .comp-item .tile-icon.leaf { color: var(--leaf-light); background: rgba(111,154,84,.16); }
+
     /* =========================================================
        REDUCED MOTION
        ========================================================= */
@@ -663,6 +732,7 @@
     <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
     <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 7h11v9H2zM13 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></symbol>
     <symbol id="i-grain" viewBox="0 0 24 24"><path d="M12 21V9"/><path d="M12 9c0-3 2-5 4-5 0 3-2 5-4 5zM12 9c0-3-2-5-4-5 0 3 2 5 4 5z"/><path d="M12 14c0-2.5 2-4 4-4 0 2.5-2 4-4 4zM12 14c0-2.5-2-4-4-4 0 2.5 2 4 4 4z"/><path d="M12 19c0-2.5 2-4 4-4 0 2.5-2 4-4 4zM12 19c0-2.5-2-4-4-4 0 2.5 2 4 4 4z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 11 5 20 4c0 9-5 15-14 15z"/><path d="M5 19c3-5 7-8 11-10"/></symbol>
     <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.2 5 2.6 5 5.8"/></symbol>
     <symbol id="i-plane" viewBox="0 0 24 24"><path d="M10.5 13.5L3 11l1.5-1.5 8 .5 4-4.5a2 2 0 0 1 3 3l-4.5 4 .5 8L14 22l-2.5-7.5-3.5 3V20l-1.5 1-1-3-3-1L4 15.5h2.5z"/></symbol>
   </svg>
@@ -684,7 +754,7 @@
         <ul class="nav-links" id="navLinks">
           <li><a href="#about">About</a></li>
           <li><a href="#products">Gold</a></li>
-          <li><a href="#grains">Grains</a></li>
+          <li><a href="#grains" class="nav-leaf">Grains</a></li>
           <li><a href="#markets">Markets</a></li>
           <li><a href="#mines">Mines</a></li>
           <li><a href="#compliance">Compliance</a></li>
@@ -727,11 +797,11 @@
                        https://images.unsplash.com/photo-1551810080-3eb3be72d3f4?auto=format&fit=crop&w=1920&q=75 1920w"
                sizes="100vw" />
           <div class="container slide-content">
-            <div class="badge">AfriShield Grains Division</div>
-            <h2 class="slide-title">Gold Capital. <span>Grain Growth.</span></h2>
+            <div class="badge leaf">AfriShield Grains Division</div>
+            <h2 class="slide-title">Gold Capital. <span class="leaf-text">Grain Growth.</span></h2>
             <p class="slide-text">Margins from our gold desk fund a fast-growing cereal business: cash at the farm gate, then drying, grading and storage of Ugandan maize, sorghum, rice and millet for buyers across East and Central Africa.</p>
             <div class="hero-btns">
-              <a href="#grains" class="btn btn-primary">Explore Grains</a>
+              <a href="#grains" class="btn btn-leaf">Explore Grains</a>
               <a href="#markets" class="btn btn-outline">Export Markets</a>
             </div>
           </div>
@@ -818,8 +888,8 @@
       <div class="container hero-stats">
         <div><div class="stat-value">100%</div><div class="stat-label">Documented gold origin</div></div>
         <div><div class="stat-value">99.9%</div><div class="stat-label">Gold export purity</div></div>
-        <div><div class="stat-value">5</div><div class="stat-label">Grain lines: maize, flour, sorghum, rice, millet</div></div>
-        <div><div class="stat-value">4</div><div class="stat-label">Regional grain markets</div></div>
+        <div><div class="stat-value leaf">5</div><div class="stat-label">Grain lines: maize, flour, sorghum, rice, millet</div></div>
+        <div><div class="stat-value leaf">4</div><div class="stat-label">Regional grain markets</div></div>
       </div>
     </div>
 
@@ -831,9 +901,9 @@
         <div class="licence-item"><a href="#licences"><strong>FIA Registered</strong><span>AML / KYC compliant</span></a></div>
         <div class="licence-item"><a href="#licences"><strong>OECD Aligned</strong><span>5-step due diligence</span></a></div>
         <div class="licence-item"><a href="#licences"><strong>ICGLR Ready</strong><span>Regional certification</span></a></div>
-        <div class="licence-item"><a href="#compliance"><strong>EAS 2 Graded</strong><span>EAC maize grain standard</span></a></div>
-        <div class="licence-item"><a href="#compliance"><strong>MAAIF Phytosanitary</strong><span>Certificate per grain consignment</span></a></div>
-        <div class="licence-item"><a href="#compliance"><strong>UWRSA Warehousing</strong><span>Licensed storage &amp; receipts</span></a></div>
+        <div class="licence-item"><a href="#compliance"><strong class="leaf">EAS 2 Graded</strong><span>EAC maize grain standard</span></a></div>
+        <div class="licence-item"><a href="#compliance"><strong class="leaf">MAAIF Phytosanitary</strong><span>Certificate per grain consignment</span></a></div>
+        <div class="licence-item"><a href="#compliance"><strong class="leaf">UWRSA Warehousing</strong><span>Licensed storage &amp; receipts</span></a></div>
       </div>
     </div>
 
@@ -933,6 +1003,7 @@
     <section id="grains" class="block grains">
       <div class="container">
         <div class="section-header reveal">
+          <div class="leaf-rule" aria-hidden="true"><svg class="icon-svg"><use href="#i-leaf"/></svg></div>
           <div class="eyebrow">Grains Division</div>
           <h2>Gold-Financed Cereal Trade</h2>
           <p>Proceeds from the gold desk give AfriShield Grains the one thing Uganda's cereal trade is short of: patient, year-round working capital.</p>
@@ -1111,7 +1182,7 @@
             </ul>
           </div>
           <div class="player-group reveal">
-            <h3><span class="tile-icon"><svg class="icon-svg"><use href="#i-grain"/></svg></span>Buyers &amp; Processors</h3>
+            <h3><span class="tile-icon leaf"><svg class="icon-svg"><use href="#i-grain"/></svg></span>Buyers &amp; Processors</h3>
             <ul>
               <li><b>Kenyan millers</b> and Kenya's National Cereals and Produce Board.</li>
               <li><b>Brewers</b>: Uganda Breweries aims to source all its farm materials, including sorghum, locally by 2030, and Nile Breweries runs its own farmer programmes.</li>
@@ -1266,7 +1337,7 @@
             <div><h3>Sanctions &amp; High-Risk Screening</h3><p>No sourcing from areas under armed-group control. Ongoing screening against UN, OFAC and other relevant sanctions lists.</p></div>
           </div>
           <div class="comp-item reveal">
-            <div class="tile-icon"><svg class="icon-svg"><use href="#i-grain"/></svg></div>
+            <div class="tile-icon leaf"><svg class="icon-svg"><use href="#i-grain"/></svg></div>
             <div><h3>EAC Grain Standards (UNBS)</h3><p>Maize graded to EAS 2: moisture at or below 13.5%, total aflatoxin at or below 10 ppb, and limits on broken, rotten and foreign matter. Every lot is tested before it is loaded.</p></div>
           </div>
           <div class="comp-item reveal">
@@ -1296,7 +1367,7 @@
           <li class="step reveal"><h3>Assay &amp; Refining</h3><p>Independent assay, royalty payment, then refining to 99.9% at a licensed Ugandan refinery.</p></li>
           <li class="step reveal"><h3>Permitted Export</h3><p>Export permit and certificate of analysis per consignment. Insured, tracked transport with the full due diligence file.</p></li>
         </ol>
-        <h3 class="process-label reveal"><span class="tag">Grain</span>Farm to buyer</h3>
+        <h3 class="process-label reveal"><span class="tag leaf">Grain</span>Farm to buyer</h3>
         <ol class="process-steps">
           <li class="step reveal"><h3>Farm-Gate Buying</h3><p>Registered farmer groups and aggregators paid in cash or mobile money, by weight and moisture reading, on the day.</p></li>
           <li class="step reveal"><h3>Dry &amp; Clean</h3><p>Grain dried to 13.5% moisture or below, then cleaned and sorted at our buying centres.</p></li>
