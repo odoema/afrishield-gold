@@ -4,12 +4,12 @@
   <script>if(location.protocol==='http:'&&/afrishieldgold\.com$/.test(location.hostname)){location.replace('https://afrishieldgold.com'+location.pathname+location.search+location.hash)}</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>AfriShield Gold Ltd | Licensed Gold Trading — Uganda & DRC</title>
-  <meta name="description" content="AfriShield Gold Ltd (hypothetical class project) is a licensed gold trading company headquartered in Kampala, Uganda. We source, assay, refine and export responsibly produced gold from Uganda and the DRC with full OECD due diligence, CEEC and ICGLR documentation." />
+  <title>AfriShield Gold Ltd | Gold Trading &amp; Cereal Supply — Uganda, DRC &amp; East Africa</title>
+  <meta name="description" content="AfriShield Gold Ltd (hypothetical class project) is a Kampala-based gold trader and cereal supplier. Gold trading margins finance a growing grain division that buys, dries, grades and stores Ugandan maize, sorghum, rice and millet for buyers in South Sudan, the DRC, Kenya and Rwanda." />
   <meta name="theme-color" content="#120e0a" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="AfriShield Gold Ltd — Responsible Gold from Uganda & the DRC" />
-  <meta property="og:description" content="Licensed, conflict-free, fully documented gold sourcing, refining and export. A hypothetical company created for a business class assignment." />
+  <meta property="og:title" content="AfriShield Gold Ltd — Responsible Gold. Gold-Financed Grain." />
+  <meta property="og:description" content="Documented gold trading from Uganda and the DRC, and a gold-financed cereal business supplying East and Central Africa. A hypothetical company created for a business class assignment." />
   <meta property="og:image" content="https://afrishieldgold.com/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -254,7 +254,7 @@
        STATS BAND + LICENCES
        ========================================================= */
     .stats-band { background: var(--dark-2); border-bottom: 1px solid var(--border); }
-    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 22px 0; text-align: center; }
+    .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 8px; padding: 22px 0; text-align: center; }
     .stat-value { font-size: 1.35rem; font-weight: 700; color: var(--gold); font-family: 'Playfair Display', serif; line-height: 1.2; }
     .stat-label { font-size: 0.72rem; color: var(--text-muted); margin-top: 4px; line-height: 1.35; }
     .licences { background: var(--dark-3); border-bottom: 1px solid var(--border); padding: 28px 0; }
@@ -546,6 +546,87 @@
       .slide-title { font-size: 3.9rem; }
     }
 
+
+    /* =========================================================
+       GRAIN DIVISION
+       ========================================================= */
+    .grains { background: var(--dark-2); }
+    .grains .card { background: var(--dark); }
+    .grain-intro { display: grid; gap: 28px; margin-bottom: 44px; align-items: center; }
+    .grain-intro img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--border); background: var(--dark-3); }
+    .grain-intro h3 { font-size: 1.4rem; margin-bottom: 12px; }
+    .grain-intro p { color: var(--text-muted); margin-bottom: 14px; }
+    .grain-intro p strong { color: var(--text); }
+    .flow { list-style: none; display: grid; gap: 12px; counter-reset: flow; margin-bottom: 48px; }
+    .flow li { position: relative; background: var(--dark); border: 1px solid var(--border); border-radius: 12px; padding: 18px 18px 18px 64px; }
+    .flow li::before { counter-increment: flow; content: counter(flow); position: absolute; left: 16px; top: 16px; width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--gold); color: var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .92rem; }
+    .flow li.gold-step::before { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--dark); border: 0; }
+    .flow h4 { font-size: 1rem; margin-bottom: 4px; }
+    .flow p { color: var(--text-muted); font-size: .86rem; }
+    .sub-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 0 0 18px; }
+    .sub-head h3 { font-size: 1.3rem; }
+    .sub-head p { color: var(--text-muted); font-size: .86rem; }
+    .grain-grid { display: grid; gap: 18px; margin-bottom: 48px; }
+    .spec-list { list-style: none; display: grid; gap: 4px; margin-top: 4px; }
+    .spec-list li { font-size: .8rem; color: var(--text-muted); padding-left: 14px; position: relative; }
+    .spec-list li::before { content: ''; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+    .hubs { display: grid; gap: 12px; }
+    .hub { background: var(--dark); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; }
+    .hub strong { display: block; color: var(--gold); font-size: .95rem; margin-bottom: 3px; }
+    .hub span { color: var(--text-muted); font-size: .84rem; }
+
+    /* =========================================================
+       MARKETS + INDUSTRY
+       ========================================================= */
+    .fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 44px; }
+    .fact { background: var(--dark-2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+    .fact b { display: block; font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.45rem; line-height: 1.15; }
+    .fact span { display: block; font-size: .8rem; color: var(--text); margin-top: 4px; }
+    .fact small { display: block; font-size: .7rem; color: var(--text-muted); margin-top: 6px; }
+    .fact small a { text-decoration: underline; text-underline-offset: 2px; }
+    .fact small a:hover { color: var(--gold); }
+    .market-grid { display: grid; gap: 16px; margin-bottom: 48px; }
+    .market { background: var(--dark-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; display: flex; flex-direction: column; gap: 10px; transition: border-color .3s; }
+    .market:hover { border-color: var(--gold); }
+    .market-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+    .market h3 { font-size: 1.2rem; }
+    .rank { font-size: .66rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--dark); background: var(--gold); border-radius: 100px; padding: 3px 9px; white-space: nowrap; }
+    .rank.alt { background: rgba(201,162,74,.14); color: var(--gold-light); border: 1px solid var(--border); }
+    .market p { color: var(--text-muted); font-size: .88rem; }
+    .market dl { display: grid; gap: 6px; font-size: .82rem; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--border); }
+    .market dt { color: var(--gold); font-weight: 600; font-size: .72rem; letter-spacing: .05em; text-transform: uppercase; }
+    .market dd { color: var(--text); margin-bottom: 4px; }
+    .players { display: grid; gap: 14px; }
+    .player-group { background: var(--dark-2); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+    .player-group h3 { font-size: 1.02rem; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+    .player-group h3 .tile-icon { width: 34px; height: 34px; margin: 0; border-radius: 9px; }
+    .player-group ul { list-style: none; display: grid; gap: 10px; }
+    .player-group li { font-size: .85rem; color: var(--text-muted); }
+    .player-group li b { color: var(--text); font-weight: 600; }
+    .landscape-note { margin-top: 18px; font-size: .74rem; color: var(--text-muted); line-height: 1.6; }
+    .landscape-note a { text-decoration: underline; text-underline-offset: 2px; }
+    .landscape-note a:hover { color: var(--gold); }
+    .process-label { font-size: 1.15rem; margin: 0 0 14px; display: flex; align-items: center; gap: 10px; }
+    .process-label .tag { margin: 0; }
+    .process-steps + .process-label { margin-top: 36px; }
+
+    @media (min-width: 640px) {
+      .hero-stats { grid-template-columns: repeat(4, 1fr); }
+      .fact-grid { grid-template-columns: repeat(3, 1fr); }
+      .grain-grid, .market-grid, .players, .hubs { grid-template-columns: 1fr 1fr; }
+      .flow { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 900px) {
+      .grain-intro { grid-template-columns: 1fr 1fr; gap: 48px; }
+      .grain-grid { grid-template-columns: repeat(3, 1fr); }
+      .flow { grid-template-columns: repeat(5, 1fr); }
+      .flow li { padding: 64px 16px 18px; }
+      .hubs { grid-template-columns: repeat(3, 1fr); }
+      .fact-grid { grid-template-columns: repeat(6, 1fr); }
+      .market-grid { grid-template-columns: repeat(3, 1fr); }
+      .players { grid-template-columns: repeat(3, 1fr); }
+    }
+
     /* =========================================================
        REDUCED MOTION
        ========================================================= */
@@ -581,6 +662,8 @@
     <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
     <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
     <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 7h11v9H2zM13 10h4l3 3v3h-7"/><circle cx="6" cy="17.5" r="2"/><circle cx="17" cy="17.5" r="2"/></symbol>
+    <symbol id="i-grain" viewBox="0 0 24 24"><path d="M12 21V9"/><path d="M12 9c0-3 2-5 4-5 0 3-2 5-4 5zM12 9c0-3-2-5-4-5 0 3 2 5 4 5z"/><path d="M12 14c0-2.5 2-4 4-4 0 2.5-2 4-4 4zM12 14c0-2.5-2-4-4-4 0 2.5 2 4 4 4z"/><path d="M12 19c0-2.5 2-4 4-4 0 2.5-2 4-4 4zM12 19c0-2.5-2-4-4-4 0 2.5 2 4 4 4z"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.8.2 5 2.6 5 5.8"/></symbol>
     <symbol id="i-plane" viewBox="0 0 24 24"><path d="M10.5 13.5L3 11l1.5-1.5 8 .5 4-4.5a2 2 0 0 1 3 3l-4.5 4 .5 8L14 22l-2.5-7.5-3.5 3V20l-1.5 1-1-3-3-1L4 15.5h2.5z"/></symbol>
   </svg>
 
@@ -600,9 +683,10 @@
         </button>
         <ul class="nav-links" id="navLinks">
           <li><a href="#about">About</a></li>
-          <li><a href="#products">Products</a></li>
+          <li><a href="#products">Gold</a></li>
+          <li><a href="#grains">Grains</a></li>
+          <li><a href="#markets">Markets</a></li>
           <li><a href="#mines">Mines</a></li>
-          <li><a href="#operations">Operations</a></li>
           <li><a href="#compliance">Compliance</a></li>
           <li><a href="#process">Process</a></li>
           <li><a href="#licences">Licences</a></li>
@@ -614,10 +698,10 @@
 
   <main id="main">
     <!-- ================= HERO SLIDER ================= -->
-    <section class="hero" id="top" aria-roledescription="carousel" aria-label="AfriShield Gold highlights">
+    <section class="hero" id="top" aria-roledescription="carousel" aria-label="AfriShield highlights: gold and grain">
       <div class="slides" id="slides" aria-live="off">
 
-        <article class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 4" id="slide-1">
+        <article class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 5" id="slide-1">
           <img class="slide-bg" alt="" fetchpriority="high" decoding="async"
                src="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=1080&q=75"
                srcset="https://images.unsplash.com/photo-1610375461246-83df859d849d?auto=format&fit=crop&w=640&h=1100&q=70 640w,
@@ -627,7 +711,7 @@
           <div class="container slide-content">
             <div class="badge">Secure · Ethical · African Gold</div>
             <h1 class="slide-title">Responsible Gold from <span>Uganda &amp; the DRC</span></h1>
-            <p class="slide-text">A licensed gold trading company headquartered in Kampala. We buy only from licensed, verified sources and move every gram through supervised, fully documented channels.</p>
+            <p class="slide-text">A licensed gold trading company headquartered in Kampala, now reinvesting its gold earnings into East Africa's cereal trade. Every gram, and every bag, moves through documented channels.</p>
             <div class="hero-btns">
               <a href="#contact" class="btn btn-primary">Request Partnership</a>
               <a href="#about" class="btn btn-outline">Who We Are</a>
@@ -635,7 +719,25 @@
           </div>
         </article>
 
-        <article class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4" id="slide-2">
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="2 of 5" id="slide-2">
+          <img class="slide-bg" alt="" decoding="async" style="--pos: 50% center"
+               src="https://images.unsplash.com/photo-1551810080-3eb3be72d3f4?auto=format&fit=crop&w=1080&q=75"
+               srcset="https://images.unsplash.com/photo-1551810080-3eb3be72d3f4?auto=format&fit=crop&w=640&h=1100&q=70 640w,
+                       https://images.unsplash.com/photo-1551810080-3eb3be72d3f4?auto=format&fit=crop&w=1080&q=75 1080w,
+                       https://images.unsplash.com/photo-1551810080-3eb3be72d3f4?auto=format&fit=crop&w=1920&q=75 1920w"
+               sizes="100vw" />
+          <div class="container slide-content">
+            <div class="badge">AfriShield Grains Division</div>
+            <h2 class="slide-title">Gold Capital. <span>Grain Growth.</span></h2>
+            <p class="slide-text">Margins from our gold desk fund a fast-growing cereal business: cash at the farm gate, then drying, grading and storage of Ugandan maize, sorghum, rice and millet for buyers across East and Central Africa.</p>
+            <div class="hero-btns">
+              <a href="#grains" class="btn btn-primary">Explore Grains</a>
+              <a href="#markets" class="btn btn-outline">Export Markets</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="3 of 5" id="slide-3">
           <img class="slide-bg" alt="" decoding="async" style="--pos: 40% center"
                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1080&q=75"
                srcset="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=640&h=1100&q=70 640w,
@@ -653,7 +755,7 @@
           </div>
         </article>
 
-        <article class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4" id="slide-3">
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="4 of 5" id="slide-4">
           <img class="slide-bg" alt="" decoding="async"
                src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1080&q=75"
                srcset="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=640&h=1100&q=70 640w,
@@ -671,7 +773,7 @@
           </div>
         </article>
 
-        <article class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4" id="slide-4">
+        <article class="slide" role="group" aria-roledescription="slide" aria-label="5 of 5" id="slide-5">
           <img class="slide-bg" alt="" decoding="async" style="--pos: 70% center"
                src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1080&q=75"
                srcset="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=640&h=1100&q=70 640w,
@@ -680,8 +782,8 @@
                sizes="100vw" />
           <div class="container slide-content">
             <div class="badge">Export Markets</div>
-            <h2 class="slide-title">Permitted Export to <span>Global Refiners</span></h2>
-            <p class="slide-text">Insured, tracked shipments to supervised buyers in the UAE and beyond, each with its own export permit, certificate of analysis and complete due diligence file.</p>
+            <h2 class="slide-title">From Kampala to <span>Dubai, Juba &amp; Goma</span></h2>
+            <p class="slide-text">Gold goes to supervised refiners in the UAE. Grain goes by road to millers, traders and relief buyers in South Sudan, the DRC, Kenya and Rwanda. Every consignment carries its own permits and certificates.</p>
             <div class="hero-btns">
               <a href="#operations" class="btn btn-primary">Where We Operate</a>
               <a href="#contact" class="btn btn-outline">Talk to the Trade Desk</a>
@@ -693,12 +795,13 @@
       <div class="container hero-controls">
         <div class="dots" role="tablist" aria-label="Choose slide" id="dots">
           <button class="dot" role="tab" aria-selected="true" aria-controls="slide-1" aria-label="Slide 1: Responsible gold"></button>
-          <button class="dot" role="tab" aria-selected="false" aria-controls="slide-2" aria-label="Slide 2: Chain of custody" tabindex="-1"></button>
-          <button class="dot" role="tab" aria-selected="false" aria-controls="slide-3" aria-label="Slide 3: Assay and refining" tabindex="-1"></button>
-          <button class="dot" role="tab" aria-selected="false" aria-controls="slide-4" aria-label="Slide 4: Export markets" tabindex="-1"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-controls="slide-2" aria-label="Slide 2: Gold-financed grain" tabindex="-1"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-controls="slide-3" aria-label="Slide 3: Chain of custody" tabindex="-1"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-controls="slide-4" aria-label="Slide 4: Assay and refining" tabindex="-1"></button>
+          <button class="dot" role="tab" aria-selected="false" aria-controls="slide-5" aria-label="Slide 5: Export markets" tabindex="-1"></button>
         </div>
         <div class="ctrl-group">
-          <span class="slide-count" aria-hidden="true"><b id="slideNow">01</b> / 04</span>
+          <span class="slide-count" aria-hidden="true"><b id="slideNow">01</b> / 05</span>
           <button class="ctrl" id="prevBtn" aria-label="Previous slide"><svg class="icon-svg"><use href="#i-left"/></svg></button>
           <button class="ctrl" id="nextBtn" aria-label="Next slide"><svg class="icon-svg"><use href="#i-right"/></svg></button>
           <button class="ctrl" id="pauseBtn" aria-label="Pause autoplay" aria-pressed="false">
@@ -713,9 +816,10 @@
     <!-- ================= STATS ================= -->
     <div class="stats-band">
       <div class="container hero-stats">
-        <div><div class="stat-value">100%</div><div class="stat-label">Documented origin</div></div>
-        <div><div class="stat-value">99.9%</div><div class="stat-label">Export purity standard</div></div>
-        <div><div class="stat-value">5-Step</div><div class="stat-label">OECD due diligence</div></div>
+        <div><div class="stat-value">100%</div><div class="stat-label">Documented gold origin</div></div>
+        <div><div class="stat-value">99.9%</div><div class="stat-label">Gold export purity</div></div>
+        <div><div class="stat-value">5</div><div class="stat-label">Grain lines: maize, flour, sorghum, rice, millet</div></div>
+        <div><div class="stat-value">4</div><div class="stat-label">Regional grain markets</div></div>
       </div>
     </div>
 
@@ -727,6 +831,9 @@
         <div class="licence-item"><a href="#licences"><strong>FIA Registered</strong><span>AML / KYC compliant</span></a></div>
         <div class="licence-item"><a href="#licences"><strong>OECD Aligned</strong><span>5-step due diligence</span></a></div>
         <div class="licence-item"><a href="#licences"><strong>ICGLR Ready</strong><span>Regional certification</span></a></div>
+        <div class="licence-item"><a href="#compliance"><strong>EAS 2 Graded</strong><span>EAC maize grain standard</span></a></div>
+        <div class="licence-item"><a href="#compliance"><strong>MAAIF Phytosanitary</strong><span>Certificate per grain consignment</span></a></div>
+        <div class="licence-item"><a href="#compliance"><strong>UWRSA Warehousing</strong><span>Licensed storage &amp; receipts</span></a></div>
       </div>
     </div>
 
@@ -735,8 +842,8 @@
       <div class="container">
         <div class="section-header reveal">
           <div class="eyebrow">Who We Are</div>
-          <h2>A Licensed Bridge Between African Gold and Global Markets</h2>
-          <p>We operate only inside formal channels. Every lot we handle carries a verifiable paper trail from source to export.</p>
+          <h2>Two Businesses, One Balance Sheet: Gold and Grain</h2>
+          <p>We operate only inside formal channels. Gold earns the margin; grain puts that margin to work feeding the region. Every lot and every bag carries a paper trail.</p>
         </div>
         <div class="about-grid">
           <div class="about-content reveal">
@@ -751,6 +858,9 @@
               <li>Uganda import and export permits, with royalty payment records</li>
               <li>KYC / AML screening of every counterparty</li>
             </ul>
+            <h3 style="margin-top:30px">Why Grain?</h3>
+            <p>Uganda grows around 5 million tonnes of maize a year, and its neighbours buy much of the surplus. The DRC and South Sudan are now Uganda's biggest export markets, and Kenya plans to import up to 25 million bags of maize after a poor 2026 harvest. What the trade lacks is <strong>working capital and quality</strong>: farmers sell wet, ungraded grain cheaply at harvest because no one finances drying, grading and storage.</p>
+            <p>That is the gap AfriShield Grains fills. A fixed share of our gold trading margin flows into a ring-fenced Grain Fund that pays farmers in cash, dries and grades their crop to East African standards, and sells it to regional buyers who pay a premium for clean, aflatoxin-tested grain.</p>
           </div>
           <div class="about-cards">
             <div class="card reveal">
@@ -758,6 +868,13 @@
               <div class="card-body">
                 <h3>Uganda Hub</h3>
                 <p>Trading desk, refining partnerships and secure logistics, under Ministry of Energy &amp; Mineral Development oversight.</p>
+              </div>
+            </div>
+            <div class="card reveal">
+              <img class="card-img" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1567547921486-f280c2f53b5d?auto=format&fit=crop&w=800&q=70" alt="Rows of maize growing in a field" />
+              <div class="card-body">
+                <h3>AfriShield Grains</h3>
+                <p>Buying centres in Uganda's grain belts, from West Nile to the Eastern maize belt, funded by gold margins and selling to South Sudan, the DRC, Kenya and Rwanda.</p>
               </div>
             </div>
             <div class="card reveal">
@@ -776,7 +893,7 @@
     <section id="products" class="block products">
       <div class="container">
         <div class="section-header reveal">
-          <div class="eyebrow">What We Supply</div>
+          <div class="eyebrow">Gold Division</div>
           <h2>Gold Products for Institutional Buyers</h2>
           <p>Assayed, documented and prepared to specification. Minimum volumes apply, and all material carries full chain-of-custody records.</p>
         </div>
@@ -812,6 +929,206 @@
       </div>
     </section>
 
+    <!-- ================= GRAINS ================= -->
+    <section id="grains" class="block grains">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Grains Division</div>
+          <h2>Gold-Financed Cereal Trade</h2>
+          <p>Proceeds from the gold desk give AfriShield Grains the one thing Uganda's cereal trade is short of: patient, year-round working capital.</p>
+        </div>
+
+        <div class="grain-intro">
+          <div class="reveal">
+            <h3>How Gold Pays for Grain</h3>
+            <p>Uganda harvests twice a year, roughly June to August and November to January. At harvest, farmers need cash fast and prices fall; a few months later, prices recover and regional buyers compete for clean grain. Most traders cannot afford to buy at harvest and hold.</p>
+            <p>Gold trading produces cash all year round. We move <strong>a fixed share of net gold trading margin into a ring-fenced Grain Fund</strong> with its own bank accounts and books. That fund buys at harvest, pays for drying, cleaning and storage, and is repaid when the grain is sold. Profits roll into the next season, so the grain book grows each year.</p>
+            <p>Because the money comes from a regulated, KYC-screened gold business, every shilling in the Grain Fund has a documented source, which matters to banks, warehouse operators and institutional buyers.</p>
+          </div>
+          <img class="reveal" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1645331465778-eb409d112198?auto=format&fit=crop&w=1000&q=70" alt="An open sack of grain on a table" />
+        </div>
+
+        <ol class="flow">
+          <li class="gold-step reveal"><h4>Gold margin</h4><p>Licensed gold trades between Uganda, the DRC and UAE refiners generate year-round cash.</p></li>
+          <li class="gold-step reveal"><h4>Grain Fund</h4><p>A fixed share of margin goes into a ring-fenced fund with separate accounts and audit.</p></li>
+          <li class="reveal"><h4>Farm-gate purchase</h4><p>Cash or mobile-money payment to farmer groups and aggregators at harvest, by weight and grade.</p></li>
+          <li class="reveal"><h4>Dry, grade, store</h4><p>Dried to EAS moisture limits, cleaned, aflatoxin-tested and held in licensed warehouses.</p></li>
+          <li class="reveal"><h4>Regional sale</h4><p>Sold to millers, traders and relief buyers. The fund is repaid and profit rolls into next season.</p></li>
+        </ol>
+
+        <div class="sub-head reveal">
+          <h3>What We Supply</h3>
+          <p>Bagged in 50 kg or 90 kg bags, or loose by the truckload.</p>
+        </div>
+        <div class="grain-grid">
+          <article class="card reveal">
+            <img class="card-img" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1511817354854-e361703ac368?auto=format&fit=crop&w=800&h=450&q=70" alt="Maize cobs on the plant" />
+            <div class="card-body">
+              <span class="tag">Flagship</span>
+              <h3>White Maize Grain</h3>
+              <p>Uganda's main cereal and the region's most traded staple. Our core line for millers in Kenya, South Sudan, the DRC and Rwanda.</p>
+              <ul class="spec-list"><li>Graded to EAS 2 (Grade 1 &amp; 2)</li><li>Moisture ≤ 13.5%</li><li>Total aflatoxin ≤ 10 ppb, tested per lot</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1627052428109-576e839d100a?auto=format&fit=crop&w=800&h=450&q=70" alt="Tall metal grain silos against a blue sky" />
+            <div class="card-body">
+              <span class="tag">Value added</span>
+              <h3>Maize Flour &amp; Feed Maize</h3>
+              <p>Toll-milled maize flour (posho) for South Sudan and DRC markets, plus feed-grade maize and bran for Uganda's growing poultry, pig and dairy feed millers.</p>
+              <ul class="spec-list"><li>Flour in 10, 25 &amp; 50 kg bags</li><li>Feed maize &amp; maize bran by the tonne</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1758356860542-a2df92aad294?auto=format&fit=crop&w=800&h=450&q=70" alt="Field of ripe red sorghum" />
+            <div class="card-body">
+              <span class="tag">Brewing &amp; food</span>
+              <h3>Sorghum</h3>
+              <p>Red and white sorghum from Teso, Lango, Acholi and West Nile, for brewers' local sourcing programmes, food processors and relief-food buyers.</p>
+              <ul class="spec-list"><li>Cleaned, sorted by colour</li><li>Moisture &amp; tannin tested</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&h=450&q=70" alt="Close-up of raw white rice grains" />
+            <div class="card-body">
+              <span class="tag">Import substitution</span>
+              <h3>Milled Rice</h3>
+              <p>Local paddy from Eastern schemes such as Doho in Butaleja and upland growers in the north, milled and graded to compete with rice imported from Tanzania and Pakistan.</p>
+              <ul class="spec-list"><li>Graded by broken-grain content</li><li>25 &amp; 50 kg bags</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1592997571659-0b21ff64313b?auto=format&fit=crop&w=800&h=450&q=70" alt="Close-up of ripe grain heads" />
+            <div class="card-body">
+              <span class="tag">Specialty</span>
+              <h3>Finger Millet</h3>
+              <p>A traditional staple in northern and eastern Uganda and South Sudan, in demand for flour, porridge and brewing.</p>
+              <ul class="spec-list"><li>Cleaned &amp; de-stoned</li><li>Smaller lots, premium pricing</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img class="card-img" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1684607961356-1d99dc31aee2?auto=format&fit=crop&w=800&h=450&q=70" alt="A row of metal grain silos" />
+            <div class="card-body">
+              <span class="tag">Services</span>
+              <h3>Storage &amp; Supply Contracts</h3>
+              <p>Forward contracts for millers and institutions that want a fixed price and steady deliveries between harvests, backed by stock in licensed warehouses.</p>
+              <ul class="spec-list"><li>Warehouse-receipt backed stock</li><li>Monthly or quarterly deliveries</li></ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="sub-head reveal">
+          <h3>Where We Buy</h3>
+          <p>Buying centres in Uganda's main grain belts.</p>
+        </div>
+        <div class="hubs">
+          <div class="hub reveal"><strong>West Nile · Nebbi &amp; Arua</strong><span>Maize and sorghum, next to the Goli and Vurra crossings into Ituri, DRC.</span></div>
+          <div class="hub reveal"><strong>Acholi &amp; Lango · Gulu &amp; Lira</strong><span>Maize, sorghum, millet and upland rice on the corridor to Elegu and Juba.</span></div>
+          <div class="hub reveal"><strong>Bunyoro · Masindi &amp; Kiryandongo</strong><span>Large-scale commercial maize farms and some of Uganda's biggest grain stores.</span></div>
+          <div class="hub reveal"><strong>Eastern belt · Mbale, Kapchorwa &amp; Tororo</strong><span>High-yield maize near the Busia, Malaba and Lwakhakha crossings into Kenya.</span></div>
+          <div class="hub reveal"><strong>Teso · Soroti &amp; Serere</strong><span>Sorghum and millet from smallholder farmer groups.</span></div>
+          <div class="hub reveal"><strong>Butaleja &amp; Bugiri</strong><span>Lowland paddy rice from the Doho and surrounding irrigation schemes.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MARKETS ================= -->
+    <section id="markets" class="block">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="eyebrow">Market Intelligence</div>
+          <h2>East Africa's Grain Trade, and Where We Fit</h2>
+          <p>Uganda is the region's breadbasket. Most of its surplus moves by road to neighbours that cannot grow enough to feed themselves.</p>
+        </div>
+
+        <div class="fact-grid">
+          <div class="fact reveal"><b>~5.0 Mt</b><span>Uganda maize output, 2024/25</span><small>Source: <a href="https://www.fas.usda.gov/data/production/country/ug" target="_blank" rel="noopener">USDA FAS</a></small></div>
+          <div class="fact reveal"><b>270,000 t</b><span>Sorghum output, 2024/25</span><small>Source: <a href="https://www.fas.usda.gov/data/production/country/ug" target="_blank" rel="noopener">USDA FAS</a></small></div>
+          <div class="fact reveal"><b>120,000 t</b><span>Millet output, 2024/25</span><small>Source: <a href="https://www.fas.usda.gov/data/production/country/ug" target="_blank" rel="noopener">USDA FAS</a></small></div>
+          <div class="fact reveal"><b>US$88.9m</b><span>Formally recorded cereal exports, 2024</span><small>UN COMTRADE via <a href="https://tradingeconomics.com/uganda/exports/cereals" target="_blank" rel="noopener">Trading Economics</a>; much border trade is unrecorded</small></div>
+          <div class="fact reveal"><b>25m bags</b><span>Maize Kenya plans to import after its 2026 shortfall</span><small>Source: <a href="https://citizen.digital/article/cs-kagwe-kenya-will-import-most-maize-from-tanzania-to-tame-shortage-n391501" target="_blank" rel="noopener">Citizen Digital, Oct 2026</a></small></div>
+          <div class="fact reveal"><b>US$79.4m</b><span>Uganda's exports to the DRC in June 2026, now its top regional market</span><small>Bank of Uganda via <a href="https://www.monitor.co.ug/uganda/news/national/drc-south-sudan-overtake-kenya-as-uganda-s-top-export-markets-5565154" target="_blank" rel="noopener">Monitor</a></small></div>
+        </div>
+
+        <div class="sub-head reveal">
+          <h3>Export Destinations</h3>
+          <p>Ranked by priority for AfriShield Grains.</p>
+        </div>
+        <div class="market-grid">
+          <article class="market reveal">
+            <div class="market-top"><h3>South Sudan</h3><span class="rank">Priority 1</span></div>
+            <p>Long the largest buyer of Ugandan maize, with steady demand for grain and maize flour from Juba's traders, schools and humanitarian agencies.</p>
+            <dl><dt>Route</dt><dd>Gulu → Elegu / Nimule → Juba</dd><dt>Products</dt><dd>Maize grain, maize flour, sorghum, beans-and-cereal relief baskets</dd></dl>
+          </article>
+          <article class="market reveal">
+            <div class="market-top"><h3>DR Congo</h3><span class="rank">Priority 1</span></div>
+            <p>Now Uganda's biggest regional export market. Eastern DRC's towns depend on Ugandan maize and flour, and our gold network already works there.</p>
+            <dl><dt>Route</dt><dd>Nebbi / Arua → Goli, Vurra → Mahagi, Bunia; Kasese → Mpondwe → Beni, Butembo</dd><dt>Products</dt><dd>Maize flour, maize grain, rice</dd></dl>
+          </article>
+          <article class="market reveal">
+            <div class="market-top"><h3>Kenya</h3><span class="rank">Priority 2</span></div>
+            <p>The region's largest maize deficit market. Kenya's millers buy Ugandan maize but insist on dry, aflatoxin-tested grain, which is exactly what our grading protects.</p>
+            <dl><dt>Route</dt><dd>Mbale / Tororo → Busia, Malaba, Lwakhakha → Eldoret, Nairobi</dd><dt>Products</dt><dd>EAS 2 maize grain, feed maize, sorghum</dd></dl>
+          </article>
+          <article class="market reveal">
+            <div class="market-top"><h3>Rwanda &amp; Burundi</h3><span class="rank alt">Priority 3</span></div>
+            <p>Rwanda relies heavily on Ugandan maize to fill its deficit, and Burundi is reached through the same corridor.</p>
+            <dl><dt>Route</dt><dd>Mbarara → Katuna / Gatuna or Mirama Hills → Kigali</dd><dt>Products</dt><dd>Maize grain, maize flour</dd></dl>
+          </article>
+          <article class="market reveal">
+            <div class="market-top"><h3>Uganda (domestic)</h3><span class="rank alt">Base load</span></div>
+            <p>Feed millers serving fast-growing poultry, pig and dairy farms, brewers expanding local sourcing of sorghum, and schools and institutions.</p>
+            <dl><dt>Buyers</dt><dd>Feed millers, brewers, flour millers, schools, refugee-response programmes</dd><dt>Products</dt><dd>Feed maize, sorghum, rice, millet</dd></dl>
+          </article>
+          <article class="market reveal">
+            <div class="market-top"><h3>Wider markets</h3><span class="rank alt">Growth</span></div>
+            <p>AfCFTA and COMESA rules open buyers further afield, and Kenya-Uganda trade missions are working to remove the barriers at the border.</p>
+            <dl><dt>Watch</dt><dd>Tanzania competes hard for Kenya's maize market, so quality and reliability are how we win</dd></dl>
+          </article>
+        </div>
+
+        <div class="sub-head reveal">
+          <h3>Key Players in Uganda's Grain Trade</h3>
+          <p>The institutions and companies that shape the market.</p>
+        </div>
+        <div class="players">
+          <div class="player-group reveal">
+            <h3><span class="tile-icon"><svg class="icon-svg"><use href="#i-bank"/></svg></span>Regulators &amp; Standards</h3>
+            <ul>
+              <li><b>MAAIF</b>, the Ministry of Agriculture: crop policy and phytosanitary certificates for exports.</li>
+              <li><b>UNBS</b>: enforces East African grain standards such as EAS 2 for maize.</li>
+              <li><b>UWRSA</b>, the Warehouse Receipt System Authority: licenses warehouses and issues receipts that farmers can borrow against.</li>
+              <li><b>Ministry of Trade (MTIC)</b>, the <b>EAC</b>, <b>COMESA</b> and <b>AfCFTA</b>: trade rules, certificates of origin and the Simplified Trade Regime for small consignments.</li>
+            </ul>
+          </div>
+          <div class="player-group reveal">
+            <h3><span class="tile-icon"><svg class="icon-svg"><use href="#i-users"/></svg></span>Industry Bodies &amp; Traders</h3>
+            <ul>
+              <li><b>Grain Council of Uganda</b>: represents processors and traders, and has pushed for a ban on exporting ungraded maize.</li>
+              <li><b>Eastern Africa Grain Council (EAGC)</b>: promotes structured grain trade and runs Kenya-Uganda trade missions.</li>
+              <li><b>Aggregators and traders</b> such as Joseph Initiative, which buys from small farmers through village agents, and pan-African traders such as ETG.</li>
+              <li>Thousands of <b>cross-border traders</b> at Busia, Malaba, Elegu, Arua and Mpondwe.</li>
+            </ul>
+          </div>
+          <div class="player-group reveal">
+            <h3><span class="tile-icon"><svg class="icon-svg"><use href="#i-grain"/></svg></span>Buyers &amp; Processors</h3>
+            <ul>
+              <li><b>Kenyan millers</b> and Kenya's National Cereals and Produce Board.</li>
+              <li><b>Brewers</b>: Uganda Breweries aims to source all its farm materials, including sorghum, locally by 2030, and Nile Breweries runs its own farmer programmes.</li>
+              <li><b>Flour and feed millers</b> such as Maganjo, along with Uganda's growing feed industry.</li>
+              <li><b>WFP and humanitarian agencies</b>, which have long bought food locally in Uganda.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="landscape-note reveal">Companies and institutions above are named to describe the market. AfriShield Gold Ltd is a hypothetical company and does not claim any relationship with them. Further reading:
+          <a href="https://www.foodbusinessmea.com/grain-council-of-uganda-seeks-ban-of-ungraded-maize-export/" target="_blank" rel="noopener">Grain Council on ungraded exports</a> ·
+          <a href="https://www.ugstandard.com/uganda-kenya-deepen-grain-trade-ties-as-cross-border-business-mission-opens-in-kampala/" target="_blank" rel="noopener">EAGC Kenya-Uganda trade mission</a> ·
+          <a href="https://capitalfm.africa/kenya-uganda-push-afcfta-maize-trade-as-kagwe-demands-safe-aflatoxin-free-grain/" target="_blank" rel="noopener">Kenya on aflatoxin-free Ugandan maize</a> ·
+          <a href="https://www.foodbusinessmea.com/?p=2107991" target="_blank" rel="noopener">UBL local sourcing</a> ·
+          <a href="https://ssa.foodsecurityportal.org/sites/default/files/2026-04/Monthly%20Report_East%20Africa_July%202025_final.pdf" target="_blank" rel="noopener">East Africa food price report, July 2025</a>
+        </p>
+      </div>
+    </section>
 
     <!-- ================= MINES ================= -->
     <section id="mines" class="block">
@@ -893,23 +1210,23 @@
         <div class="section-header reveal">
           <div class="eyebrow">Where We Operate</div>
           <h2>East &amp; Central Africa Focus</h2>
-          <p>A presence along the key gold-producing and transit corridors of the Great Lakes region.</p>
+          <p>A presence along the gold-producing and grain-trading corridors of the Great Lakes region.</p>
         </div>
         <div class="ops-grid">
           <div class="ops-card reveal">
             <div class="ops-icon"><svg class="icon-svg"><use href="#i-home"/></svg></div>
             <h3>Uganda</h3>
-            <p>Headquarters and trading desk in Kampala. Licensed by the Ministry of Energy &amp; Mineral Development, with refining partners and secure logistics providers.</p>
+            <p>Headquarters, gold desk and Grain Fund treasury in Kampala. Grain buying centres in West Nile, Acholi, Lango, Bunyoro, Teso and the Eastern maize belt.</p>
           </div>
           <div class="ops-card reveal">
             <div class="ops-icon"><svg class="icon-svg"><use href="#i-pick"/></svg></div>
             <h3>Democratic Republic of Congo</h3>
-            <p>Sourcing from validated artisanal zones and licensed cooperatives, under the DRC Mining Code, CEEC certification and the ICGLR Regional Certification Mechanism.</p>
+            <p>Gold sourced from validated zones and licensed cooperatives under the DRC Mining Code, CEEC and ICGLR rules. Eastern DRC is also a major buyer of our maize and flour.</p>
           </div>
           <div class="ops-card reveal">
             <div class="ops-icon"><svg class="icon-svg"><use href="#i-plane"/></svg></div>
             <h3>Export Markets</h3>
-            <p>Main destination: supervised buyers and refiners in the UAE (Dubai). Every shipment carries a full due diligence file, transport records and proof of royalty payment.</p>
+            <p>Gold: supervised refiners in the UAE (Dubai). Grain: millers, traders and relief buyers in South Sudan, the DRC, Kenya and Rwanda, by road through official border posts.</p>
           </div>
         </div>
       </div>
@@ -921,7 +1238,7 @@
         <div class="section-header reveal">
           <div class="eyebrow">Standards &amp; Oversight</div>
           <h2>Built for Regulatory Scrutiny</h2>
-          <p>Every transaction is structured so a Dubai refiner, European importer or institutional buyer can complete their own due diligence without gaps.</p>
+          <p>Every transaction is structured so a Dubai refiner, a Kenyan miller or a relief agency can complete their own due diligence without gaps.</p>
         </div>
         <div class="compliance-grid">
           <div class="comp-item reveal">
@@ -948,6 +1265,18 @@
             <div class="tile-icon"><svg class="icon-svg"><use href="#i-shield"/></svg></div>
             <div><h3>Sanctions &amp; High-Risk Screening</h3><p>No sourcing from areas under armed-group control. Ongoing screening against UN, OFAC and other relevant sanctions lists.</p></div>
           </div>
+          <div class="comp-item reveal">
+            <div class="tile-icon"><svg class="icon-svg"><use href="#i-grain"/></svg></div>
+            <div><h3>EAC Grain Standards (UNBS)</h3><p>Maize graded to EAS 2: moisture at or below 13.5%, total aflatoxin at or below 10 ppb, and limits on broken, rotten and foreign matter. Every lot is tested before it is loaded.</p></div>
+          </div>
+          <div class="comp-item reveal">
+            <div class="tile-icon"><svg class="icon-svg"><use href="#i-doc"/></svg></div>
+            <div><h3>Phytosanitary &amp; Origin Papers</h3><p>MAAIF phytosanitary certificate, EAC or COMESA certificate of origin, and customs entry for every grain consignment. No informal border crossings.</p></div>
+          </div>
+          <div class="comp-item reveal">
+            <div class="tile-icon"><svg class="icon-svg"><use href="#i-home"/></svg></div>
+            <div><h3>Licensed Warehousing &amp; Clean Funds</h3><p>Grain is stored in UWRSA-licensed warehouses. The Grain Fund is ring-fenced from the gold desk, audited separately, and covered by the same AML controls.</p></div>
+          </div>
         </div>
       </div>
     </section>
@@ -958,13 +1287,21 @@
         <div class="section-header reveal">
           <div class="eyebrow">How We Work</div>
           <h2>Transparent Chain of Custody</h2>
-          <p>From cooperative to certified export, every step is documented and verifiable.</p>
+          <p>From mine or farm to certified export, every step is documented and verifiable.</p>
         </div>
+        <h3 class="process-label reveal"><span class="tag">Gold</span>Mine to refiner</h3>
         <ol class="process-steps">
           <li class="step reveal"><h3>Source Verification</h3><p>Licensed mines and registered cooperatives in validated zones. Site visits and risk assessments on file.</p></li>
           <li class="step reveal"><h3>Licensed Purchase</h3><p>Buy only from licence holders. DRC lots enter Uganda with a DRC export permit, CEEC certificate and a Ugandan import permit.</p></li>
           <li class="step reveal"><h3>Assay &amp; Refining</h3><p>Independent assay, royalty payment, then refining to 99.9% at a licensed Ugandan refinery.</p></li>
           <li class="step reveal"><h3>Permitted Export</h3><p>Export permit and certificate of analysis per consignment. Insured, tracked transport with the full due diligence file.</p></li>
+        </ol>
+        <h3 class="process-label reveal"><span class="tag">Grain</span>Farm to buyer</h3>
+        <ol class="process-steps">
+          <li class="step reveal"><h3>Farm-Gate Buying</h3><p>Registered farmer groups and aggregators paid in cash or mobile money, by weight and moisture reading, on the day.</p></li>
+          <li class="step reveal"><h3>Dry &amp; Clean</h3><p>Grain dried to 13.5% moisture or below, then cleaned and sorted at our buying centres.</p></li>
+          <li class="step reveal"><h3>Grade &amp; Store</h3><p>Lab-tested for aflatoxin, graded to EAS standards, bagged and lodged in a licensed warehouse.</p></li>
+          <li class="step reveal"><h3>Certified Delivery</h3><p>Phytosanitary and origin certificates, then delivery through official border posts with a quality report for each truck.</p></li>
         </ol>
       </div>
     </section>
@@ -1058,12 +1395,12 @@
         <div class="section-header reveal">
           <div class="eyebrow">Get in Touch</div>
           <h2>Serious Partnership Inquiries Only</h2>
-          <p>We work with licensed refiners, institutional buyers and established trading houses. Please provide full company details.</p>
+          <p>We work with licensed refiners, millers, grain buyers, farmer groups and established trading houses. Please provide full company details.</p>
         </div>
         <div class="contact-grid">
           <div class="contact-info reveal">
             <h3>AfriShield Gold Ltd</h3>
-            <p>Licensed gold trading company operating between Uganda and the Democratic Republic of Congo. All inquiries are subject to KYC and source verification.</p>
+            <p>Gold trading between Uganda, the DRC and the UAE, and gold-financed cereal supply across East and Central Africa. All inquiries are subject to KYC and source verification.</p>
             <div class="contact-detail"><div class="tile-icon"><svg class="icon-svg"><use href="#i-pin"/></svg></div><div><strong>Uganda Office</strong><span>Kampala Business District, Uganda</span></div></div>
             <div class="contact-detail"><div class="tile-icon"><svg class="icon-svg"><use href="#i-pin"/></svg></div><div><strong>DRC Coordination</strong><span>Kinshasa &amp; Eastern Provinces (licensed partners)</span></div></div>
             <div class="contact-detail"><div class="tile-icon"><svg class="icon-svg"><use href="#i-mail"/></svg></div><div><strong>Email</strong><a href="mailto:info@afrishieldgold.com">info@afrishieldgold.com</a><a href="mailto:partnerships@afrishieldgold.com">partnerships@afrishieldgold.com <small>(trade desk)</small></a></div></div>
@@ -1085,7 +1422,10 @@
               <label for="interest">Nature of inquiry *</label>
               <select id="interest" name="interest" required>
                 <option value="">Select…</option>
-                <option value="offtake">Offtake / purchase inquiry</option>
+                <option value="offtake">Gold offtake / purchase inquiry</option>
+                <option value="grain-buy">Grain purchase: maize, flour, sorghum, rice or millet</option>
+                <option value="grain-supply">Grain supply: farmer group or aggregator</option>
+                <option value="warehouse">Warehousing or logistics partnership</option>
                 <option value="partnership">Strategic partnership</option>
                 <option value="due-diligence">Due diligence documentation request</option>
                 <option value="other">Other</option>
@@ -1093,7 +1433,7 @@
             </div>
             <div class="form-group">
               <label for="message">Message *</label>
-              <textarea id="message" name="message" required placeholder="Your requirements, volume interest, and company registration or refiner status…"></textarea>
+              <textarea id="message" name="message" required placeholder="Product (gold or grain), volume in kg or tonnes, delivery point, and your company registration…"></textarea>
             </div>
             <div class="form-actions">
               <button type="submit" class="btn btn-primary" data-via="email"><svg class="icon-svg"><use href="#i-mail"/></svg>Send by Email</button>
@@ -1133,7 +1473,7 @@
             <span class="wordmark"><b>Afrishield <span class="accent">Gold</span></b><small>Est. 2024</small></span>
           </a>
           <p class="tagline">Secure. Ethical. African Gold.</p>
-          <p>Licensed, transparent and fully documented gold trading between Uganda, the DRC and international markets.</p>
+          <p>Documented gold trading between Uganda, the DRC and international markets, and gold-financed grain for East and Central Africa.</p>
           <div class="footer-contact">
             <a href="mailto:info@afrishieldgold.com">info@afrishieldgold.com</a>
             <a href="tel:+256746840004">+256 746 840 004</a>
@@ -1145,7 +1485,9 @@
             <h3>Company</h3>
             <ul>
               <li><a href="#about">About us</a></li>
-              <li><a href="#products">Products</a></li>
+              <li><a href="#products">Gold products</a></li>
+              <li><a href="#grains">Grains division</a></li>
+              <li><a href="#markets">Grain markets</a></li>
               <li><a href="#mines">Mines</a></li>
               <li><a href="#operations">Operations</a></li>
               <li><a href="#contact">Contact</a></li>
@@ -1156,6 +1498,7 @@
             <ul>
               <li><a href="#compliance">OECD due diligence</a></li>
               <li><a href="#compliance">CEEC &amp; ICGLR</a></li>
+              <li><a href="#compliance">EAC grain standards</a></li>
               <li><a href="#process">Chain of custody</a></li>
               <li><a href="#licences">Licences &amp; documents</a></li>
             </ul>
@@ -1164,7 +1507,7 @@
       </div>
       <div class="footer-bottom">
         <span>© <span id="year">2026</span> AfriShield Gold Ltd. </span>
-        <span>Kampala, Uganda · Democratic Republic of Congo</span>
+        <span>Kampala, Uganda · DRC · South Sudan · Kenya · Rwanda</span>
       </div>
     </div>
   </footer>

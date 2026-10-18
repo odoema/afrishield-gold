@@ -1,6 +1,6 @@
 # AfriShield Gold Ltd: Website
 
-One-page, mobile-first website for **AfriShield Gold Ltd**, a *hypothetical* licensed gold trading company (Uganda & DRC) created for a business class assignment.
+One-page, mobile-first website for **AfriShield Gold Ltd**, a *hypothetical* licensed gold trading company (Uganda & DRC) created for a business class assignment. Gold trading margins finance the company's growing cereal business, **AfriShield Grains** (maize, maize flour, sorghum, rice and finger millet for South Sudan, the DRC, Kenya and Rwanda).
 
 Live site: **https://afrishieldgold.com** (GitHub Pages)
 
@@ -15,8 +15,8 @@ Live site: **https://afrishieldgold.com** (GitHub Pages)
 | `404.html`, `robots.txt`, `sitemap.xml` | Hosting extras |
 
 ## Features
-- 4-slide hero slider (swipe, arrows, dots, keyboard, autoplay with pause, reduced-motion support)
-- Sections: About, Products, Mines (real haul-truck photos, credited), Operations, Compliance, Process, Licences & Documents, Contact
+- 5-slide hero slider (swipe, arrows, dots, keyboard, autoplay with pause, reduced-motion support)
+- Sections: About, Gold Products, Grains (gold-financed model, grain products, buying hubs), Markets (market facts with sources, export destinations, key industry players), Mines (real haul-truck photos, credited), Operations, Compliance, Process, Licences & Documents, Contact
 - Contact form composes a pre-filled **email to info@afrishieldgold.com** or a **WhatsApp message to +256 746 840 004** (works on any static host, no backend)
 - Brand: shield logo, chocolate-brown + gold + cream palette, tagline "Secure. Ethical. African Gold."
 
