@@ -1845,6 +1845,22 @@
   (() => {
     'use strict';
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const animeMotion = reduceMotion
+      ? Promise.resolve(null)
+      : import('https://cdn.jsdelivr.net/npm/animejs@4.5.0/lib/anime.esm.js').catch(() => null);
+    const animateSlideContent = slide => {
+      if (reduceMotion) return;
+      animeMotion.then(anime => {
+        if (!anime || !slide.classList.contains('is-active')) return;
+        anime.animate(slide.querySelectorAll('.slide-content > *'), {
+          opacity: [0, 1],
+          translateY: [18, 0],
+          delay: anime.stagger(85),
+          duration: 650,
+          ease: 'out(3)'
+        });
+      });
+    };
 
     /* ---------- Header / nav ---------- */
     const header = document.getElementById('siteHeader');
@@ -1922,6 +1938,7 @@
       counter.textContent = String(current + 1).padStart(2, '0');
       if (focusDot) dots[current].focus();
       restartProgress();
+      animateSlideContent(slides[current]);
     }
     const next = () => goTo(current + 1);
     const prev = () => goTo(current - 1);
