@@ -932,6 +932,40 @@
     .faq[open] { border-color: var(--gold); }
     .faq p { padding: 0 18px 18px; color: var(--text-muted); font-size: .92rem; }
 
+    /* Anime.js story, route map, and motion details */
+    .gold-grain-story { display: grid; gap: 14px; align-items: center; margin: 0 0 44px; padding: 22px; border: 1px solid rgba(99,76,31,.22); border-radius: var(--radius); background: rgba(255,255,255,.55); color: #302718; }
+    .story-copy h3 { font-size: 1.35rem; margin-bottom: 8px; }
+    .story-copy p { color: #594f3c; font-size: .9rem; max-width: 42ch; }
+    .story-legend, .route-legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 14px; font-size: .78rem; }
+    .story-legend span, .route-legend span { display: inline-flex; align-items: center; gap: 7px; }
+    .legend-gold, .legend-leaf { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); }
+    .legend-leaf { background: var(--leaf); }
+    .story-visual { width: 100%; height: auto; overflow: visible; }
+    .story-route { fill: none; stroke: rgba(116,92,48,.34); stroke-width: 4; stroke-linecap: round; }
+    .story-sack { fill: var(--leaf); stroke: #456c36; stroke-width: 2; }
+    .story-kernel { fill: #f0d78e; }
+    .story-label { fill: #594f3c; font: 600 13px system-ui, sans-serif; }
+    .route-map-card { display: grid; gap: 10px; margin-top: 32px; padding: 22px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--dark-2); }
+    .route-map-card h3 { font-size: 1.3rem; margin-bottom: 6px; }
+    .route-map-card p { color: var(--text-muted); font-size: .9rem; }
+    .route-note { display: inline-block; margin-top: 8px; color: var(--text-muted); font-size: .72rem; }
+    .route-map { width: 100%; max-height: 390px; overflow: visible; }
+    .route-line { fill: none; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 7 9; opacity: .72; }
+    .route-gold { stroke: var(--gold); }
+    .route-grain { stroke: var(--leaf-light); }
+    .route-node { fill: var(--dark); stroke: var(--text-muted); stroke-width: 2; }
+    .route-map-label { fill: var(--text); font: 600 15px system-ui, sans-serif; }
+    .route-kampala { fill: var(--gold-light); }
+    .route-marker-gold { fill: var(--gold-light); stroke: var(--dark); stroke-width: 2; }
+    .route-marker-grain { fill: var(--leaf-light); stroke: var(--dark); stroke-width: 2; }
+    .stat-value { font-variant-numeric: tabular-nums; }
+    @media (min-width: 760px) {
+      .gold-grain-story { grid-template-columns: .8fr 1.2fr; gap: 28px; padding: 30px; }
+      .route-map-card { grid-template-columns: .75fr 1.25fr; align-items: center; gap: 22px; }
+      .route-map-card .route-legend { grid-column: 1; }
+      .route-map-card .route-map { grid-column: 2; grid-row: 1 / span 2; }
+    }
+
     /* =========================================================
        REDUCED MOTION
        ========================================================= */
@@ -1122,10 +1156,10 @@
     <!-- ================= STATS ================= -->
     <div class="stats-band">
       <div class="container hero-stats">
-        <div><div class="stat-value">100%</div><div class="stat-label">Documented gold origin</div></div>
-        <div><div class="stat-value">99.9%</div><div class="stat-label">Gold export purity</div></div>
-        <div><div class="stat-value leaf">5</div><div class="stat-label">Grain lines: maize, flour, sorghum, rice, millet</div></div>
-        <div><div class="stat-value leaf">4</div><div class="stat-label">Regional grain markets</div></div>
+        <div><div class="stat-value" data-count-to="100">100%</div><div class="stat-label">Documented gold origin</div></div>
+        <div><div class="stat-value" data-count-to="99.9">99.9%</div><div class="stat-label">Gold export purity</div></div>
+        <div><div class="stat-value leaf" data-count-to="5">5</div><div class="stat-label">Grain lines: maize, flour, sorghum, rice, millet</div></div>
+        <div><div class="stat-value leaf" data-count-to="4">4</div><div class="stat-label">Regional grain markets</div></div>
       </div>
     </div>
 
@@ -1254,6 +1288,31 @@
           </div>
           <img width="1000" height="562" class="reveal" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1645331465778-eb409d112198?auto=format&fit=crop&w=1000&q=70" alt="An open sack of grain on a table" />
         </div>
+
+        <figure class="gold-grain-story reveal" id="goldGrainStory" aria-labelledby="goldGrainTitle">
+          <figcaption class="story-copy">
+            <span class="eyebrow">One margin. Two essentials.</span>
+            <h3 id="goldGrainTitle">Gold keeps grain moving.</h3>
+            <p>Year-round gold earnings become harvest-time capital, so grain can be bought, dried, graded and delivered when buyers need it.</p>
+            <div class="story-legend"><span><i class="legend-gold"></i>Gold margin</span><span><i class="legend-leaf"></i>Grain Fund</span></div>
+          </figcaption>
+          <svg class="story-visual" viewBox="0 0 560 190" role="img" aria-labelledby="storySvgTitle storySvgDesc">
+            <title id="storySvgTitle">Gold margin moving into the Grain Fund</title>
+            <desc id="storySvgDesc">A gold bar travels along a path toward a grain sack, showing how gold earnings finance cereal purchases.</desc>
+            <path class="story-route" d="M56 96 C165 26 365 166 478 96" />
+            <g class="story-cargo story-gold-bar" transform="translate(56 96)">
+              <rect x="-28" y="-14" width="56" height="28" rx="5" fill="#c9a24a" stroke="#8b6c26" stroke-width="2" />
+              <path d="M-17 -5h34M-13 2h26" stroke="#f1d78d" stroke-width="2" stroke-linecap="round" />
+            </g>
+            <g class="story-sack" transform="translate(478 96)">
+              <path d="M-26 -25 Q0 -15 26 -25 L21 25 Q0 34 -21 25Z" />
+              <path d="M-22 -14 Q0 -4 22 -14" fill="none" stroke="#d8e4c8" stroke-width="3" />
+              <circle class="story-kernel" cx="-8" cy="4" r="3" /><circle class="story-kernel" cx="2" cy="9" r="3" /><circle class="story-kernel" cx="10" cy="1" r="3" />
+            </g>
+            <text class="story-label" x="56" y="166" text-anchor="middle">Gold margin</text>
+            <text class="story-label" x="478" y="166" text-anchor="middle">Grain Fund</text>
+          </svg>
+        </figure>
 
         <ol class="flow">
           <li class="gold-step reveal"><h4>Gold margin</h4><p>Licensed gold trades between Uganda, the DRC and UAE refiners generate year-round cash.</p></li>
@@ -1536,6 +1595,32 @@
             <p>Gold: supervised refiners in the UAE (Dubai). Grain: millers, traders and relief buyers in South Sudan, the DRC, Kenya and Rwanda, by road through official border posts.</p>
           </div>
         </div>
+        <figure class="route-map-card reveal" id="tradeRoutes" aria-labelledby="routeTitle">
+          <figcaption>
+            <div class="eyebrow">Official corridors</div>
+            <h3 id="routeTitle">Routes with a paper trail</h3>
+            <p>Gold travels to supervised refiners in Dubai. Grain moves by road to buyers in Juba, Goma and Nairobi.</p>
+            <span class="route-note">Schematic routes | not to scale</span>
+          </figcaption>
+          <svg class="route-map" viewBox="0 0 760 390" role="img" aria-labelledby="routeSvgTitle routeSvgDesc">
+            <title id="routeSvgTitle">AfriShield gold and grain export corridors</title>
+            <desc id="routeSvgDesc">Schematic routes connect Kampala with Dubai for gold, and Juba, Goma and Nairobi for grain.</desc>
+            <path class="route-line route-gold" d="M300 240 C390 190 500 100 670 84" />
+            <path class="route-line route-grain" d="M300 240 Q320 176 345 126" />
+            <path class="route-line route-grain" d="M300 240 Q230 260 160 310" />
+            <path class="route-line route-grain" d="M300 240 Q400 280 490 320" />
+            <circle class="route-node" cx="300" cy="240" r="8" /><circle class="route-node" cx="670" cy="84" r="6" />
+            <circle class="route-node" cx="345" cy="126" r="6" /><circle class="route-node" cx="160" cy="310" r="6" /><circle class="route-node" cx="490" cy="320" r="6" />
+            <circle class="route-marker route-marker-gold" cx="300" cy="240" r="5" />
+            <circle class="route-marker route-marker-grain" cx="300" cy="240" r="5" />
+            <text class="route-map-label" x="686" y="80">Dubai</text>
+            <text class="route-map-label" x="350" y="112">Juba</text>
+            <text class="route-map-label" x="126" y="344">Goma</text>
+            <text class="route-map-label" x="490" y="350" text-anchor="middle">Nairobi</text>
+            <text class="route-map-label route-kampala" x="300" y="272" text-anchor="middle">Kampala</text>
+          </svg>
+          <div class="route-legend"><span><i class="legend-gold"></i>Gold</span><span><i class="legend-leaf"></i>Grain</span></div>
+        </figure>
       </div>
     </section>
 
@@ -1597,14 +1682,14 @@
           <p>From mine or farm to certified export, every step is documented and verifiable.</p>
         </div>
         <h3 class="process-label reveal"><span class="tag">Gold</span>Mine to refiner</h3>
-        <ol class="process-steps">
+        <ol class="process-steps anime-process">
           <li class="step reveal"><h3>Source Verification</h3><p>Licensed mines and registered cooperatives in validated zones. Site visits and risk assessments on file.</p></li>
           <li class="step reveal"><h3>Licensed Purchase</h3><p>Buy only from licence holders. DRC lots enter Uganda with a DRC export permit, CEEC certificate and a Ugandan import permit.</p></li>
           <li class="step reveal"><h3>Assay &amp; Refining</h3><p>Independent assay, royalty payment, then refining to 99.9% at a licensed Ugandan refinery.</p></li>
           <li class="step reveal"><h3>Permitted Export</h3><p>Export permit and certificate of analysis per consignment. Insured, tracked transport with the full due diligence file.</p></li>
         </ol>
         <h3 class="process-label reveal"><span class="tag leaf">Grain</span>Farm to buyer</h3>
-        <ol class="process-steps">
+        <ol class="process-steps anime-process">
           <li class="step reveal"><h3>Farm-Gate Buying</h3><p>Registered farmer groups and aggregators paid in cash or mobile money, by weight and moisture reading, on the day.</p></li>
           <li class="step reveal"><h3>Dry &amp; Clean</h3><p>Grain dried to 13.5% moisture or below, then cleaned and sorted at our buying centres.</p></li>
           <li class="step reveal"><h3>Grade &amp; Store</h3><p>Lab-tested for aflatoxin, graded to EAS standards, bagged and lodged in a licensed warehouse.</p></li>
@@ -1848,19 +1933,88 @@
     const animeMotion = reduceMotion
       ? Promise.resolve(null)
       : import('https://cdn.jsdelivr.net/npm/animejs@4.5.0/lib/anime.esm.js').catch(() => null);
+    const slideTitleWords = new WeakMap();
     const animateSlideContent = slide => {
       if (reduceMotion) return;
       animeMotion.then(anime => {
         if (!anime || !slide.classList.contains('is-active')) return;
-        anime.animate(slide.querySelectorAll('.slide-content > *'), {
-          opacity: [0, 1],
-          translateY: [18, 0],
-          delay: anime.stagger(85),
-          duration: 650,
-          ease: 'out(3)'
-        });
+        const title = slide.querySelector('.slide-title');
+        if (title) {
+          try {
+            let words = slideTitleWords.get(title);
+            if (!words) {
+              words = anime.splitText(title, { words: { wrap: 'clip' } }).words;
+              slideTitleWords.set(title, words);
+            }
+            anime.animate(words, { translateY: ['110%', '0%'], delay: anime.stagger(38), duration: 620, ease: 'out(3)' });
+          } catch (_) { /* Keep the original heading if text splitting is unsupported. */ }
+        }
+        const supporting = [...slide.querySelectorAll('.slide-content > *')].filter(el => el !== title);
+        anime.animate(supporting, { opacity: [0, 1], translateY: [18, 0], delay: anime.stagger(85), duration: 650, ease: 'out(3)' });
       });
     };
+
+    const installAnimeEnhancements = anime => {
+      const { animate, stagger, onScroll, svg } = anime;
+
+      // Count the existing headline figures only when they scroll into view.
+      document.querySelectorAll('.stat-value[data-count-to]').forEach(el => {
+        try {
+          const finalText = el.textContent.trim();
+          const target = Number(el.dataset.countTo);
+          const match = finalText.match(/^(\d+(?:\.\d+)?)(.*)$/);
+          if (!match || !Number.isFinite(target)) return;
+          const decimals = (match[1].split('.')[1] || '').length;
+          const suffix = match[2];
+          const state = { value: 0 };
+          el.textContent = '0' + suffix;
+          animate(state, {
+            value: target, duration: 1100, ease: 'out(3)', autoplay: onScroll({ target: el }),
+            onUpdate: () => { el.textContent = state.value.toFixed(decimals) + suffix; },
+            onComplete: () => { el.textContent = finalText; }
+          });
+        } catch (_) { /* Leave the static value readable if a counter cannot start. */ }
+      });
+
+      // Scrub the gold-to-grain illustration as the reader reaches it.
+      const story = document.getElementById('goldGrainStory');
+      if (story) {
+        try {
+          const storyPath = story.querySelector('.story-route');
+          animate(svg.createDrawable(storyPath), { draw: ['0 0', '0 1'], duration: 1200, ease: 'linear', autoplay: onScroll({ target: story }) });
+          animate(story.querySelector('.story-gold-bar'), { ...svg.createMotionPath(storyPath), duration: 1500, ease: 'linear', autoplay: onScroll({ target: story }) });
+          animate(story.querySelectorAll('.story-kernel'), { scale: [.65, 1], delay: stagger(90), duration: 420, ease: 'out(3)', autoplay: onScroll({ target: story }) });
+        } catch (_) { /* The static illustration remains complete without motion. */ }
+      }
+
+      // Draw the regional corridors and move small markers along two sample routes.
+      const map = document.getElementById('tradeRoutes');
+      if (map) {
+        try {
+          const paths = [...map.querySelectorAll('.route-line')];
+          const drawables = paths.flatMap(path => svg.createDrawable(path));
+          animate(drawables, { draw: ['0 0', '0 1'], delay: stagger(130), duration: 1000, ease: 'inOut(2)', autoplay: onScroll({ target: map }) });
+          const goldRoute = map.querySelector('.route-gold');
+          const grainRoute = map.querySelector('.route-grain');
+          animate(map.querySelector('.route-marker-gold'), { ...svg.createMotionPath(goldRoute), duration: 1800, ease: 'linear', autoplay: onScroll({ target: map }) });
+          animate(map.querySelector('.route-marker-grain'), { ...svg.createMotionPath(grainRoute), duration: 1300, ease: 'linear', autoplay: onScroll({ target: map }) });
+        } catch (_) { /* The static route diagram remains usable if SVG motion is unavailable. */ }
+      }
+
+      // Let the two existing chain-of-custody lists arrive one step at a time.
+      document.querySelectorAll('.anime-process').forEach(list => {
+        try {
+          animate(list.querySelectorAll('.step'), { scale: [.96, 1], delay: stagger(100), duration: 430, ease: 'out(3)', autoplay: onScroll({ target: list }) });
+        } catch (_) { /* Preserve the list if scroll animation is unavailable. */ }
+      });
+    };
+
+    animeMotion.then(anime => {
+      if (!anime || reduceMotion) return;
+      installAnimeEnhancements(anime);
+      const activeSlide = document.querySelector('.slide.is-active');
+      if (activeSlide) animateSlideContent(activeSlide);
+    });
 
     /* ---------- Header / nav ---------- */
     const header = document.getElementById('siteHeader');
